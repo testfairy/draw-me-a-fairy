@@ -42,7 +42,7 @@ public class SplashScreenActivity extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.splash_screen);
-		TestFairy.begin(this, "915d700e493b268df0be27cf8c46bb25d8986e21");
+//		TestFairy.begin(this, "a79971822e08306fd2c7eb1c3f421ed3b0b497da");
 
 		Log.d(TAG, "onCreate " + TAG);
 		ImageView image = (ImageView) findViewById(R.id.about_image);

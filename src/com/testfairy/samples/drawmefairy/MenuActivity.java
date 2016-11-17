@@ -26,7 +26,10 @@ import android.widget.Button;
 import android.widget.Toast;
 import draw.me.fairy.R;
 import com.testfairy.TestFairy;
-
+import android.widget.ArrayAdapter;
+import android.content.DialogInterface;
+import android.app.AlertDialog;
+import java.util.HashMap;
 
 public class MenuActivity extends Activity {
 
@@ -95,12 +98,12 @@ public class MenuActivity extends Activity {
 		}
 		return null;
 	}
-
+	HashMap<String, String>  emailToToken;
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		Log.d(TAG, "onCreate");
 		super.onCreate(savedInstanceState);
-		TestFairy.begin(this, "915d700e493b268df0be27cf8c46bb25d8986e21");
+//		TestFairy.begin(this, "a79971822e08306fd2c7eb1c3f421ed3b0b497da");
 
 		Log.d(TAG, "onCreate " + TAG);
 		// hide title bar
@@ -120,7 +123,61 @@ public class MenuActivity extends Activity {
 		crashButton.setOnClickListener(new OnClickStartActivity(CrashActivity.class));
 		menuLogo.setOnLongClickListener(onLongClickMenuLogo);
 
+		emailToToken = new HashMap<String, String>();
+		emailToToken.put("tishma@testfairy.com", "b117aecfafe208d6481f3fc200d4f9a73d1686d2");
+		emailToToken.put("vijay@toptal.com", "adf3f2dd5b9e4bea101b6260183264d13efefaf8");
+		emailToToken.put("giltsl@gmail.com", "a79971822e08306fd2c7eb1c3f421ed3b0b497da");
+		emailToToken.put("yair@bar-on.org", "1723a5a3d56bde654b69b3c1a710d867e58f8bcd");
+		emailToToken.put("yuval@testfairy.com", "3574772872502bb1f6c735ae8b78d90b4732add3");
+		emailToToken.put("shay@testfairy.com", "53e981a33c5511db282eea2b3478329b2a2b2be2");
+		emailToToken.put("gil@megidish.net", "e27cf8c46bb25d8986e21915d700e493b268df0b");
 
+		showApptokenSesector();
+
+	}
+
+
+
+	private void showApptokenSesector() {
+		AlertDialog.Builder builderSingle = new AlertDialog.Builder(MenuActivity.this);
+
+		builderSingle.setTitle("Select App Token");
+
+		final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(
+			MenuActivity.this,
+			android.R.layout.select_dialog_singlechoice);
+		arrayAdapter.add("tishma@testfairy.com");
+		arrayAdapter.add("vijay@toptal.com");
+		arrayAdapter.add("giltsl@gmail.com");
+		arrayAdapter.add("yair@bar-on.org");
+		arrayAdapter.add("yuval@testfairy.com");
+		arrayAdapter.add("shay@testfairy.com");
+		arrayAdapter.add("gil@megidish.net");
+
+		builderSingle.setAdapter(
+			arrayAdapter,
+			new DialogInterface.OnClickListener() {
+				@Override
+				public void onClick(DialogInterface dialog, int which) {
+
+					String strName = arrayAdapter.getItem(which);
+					final String appToken = emailToToken.get(strName);
+					AlertDialog.Builder builderInner = new AlertDialog.Builder(MenuActivity.this);
+					builderInner.setMessage(appToken);
+					builderInner.setTitle("Your Selected Item is");
+					builderInner.setPositiveButton(
+						"Ok",
+						new DialogInterface.OnClickListener() {
+							@Override
+							public void onClick(DialogInterface dialog,int which) {
+								TestFairy.begin(MenuActivity.this, appToken);
+								dialog.dismiss();
+							}
+						});
+					builderInner.show();
+				}
+			});
+		builderSingle.show();
 
 	}
 
