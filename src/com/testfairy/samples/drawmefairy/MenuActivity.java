@@ -30,6 +30,7 @@ import android.widget.ArrayAdapter;
 import android.content.DialogInterface;
 import android.app.AlertDialog;
 import java.util.HashMap;
+import android.content.SharedPreferences;
 
 public class MenuActivity extends Activity {
 
@@ -99,6 +100,7 @@ public class MenuActivity extends Activity {
 		return null;
 	}
 	HashMap<String, String>  emailToToken;
+	SharedPreferences sharedPreferences;
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		Log.d(TAG, "onCreate");
@@ -132,7 +134,13 @@ public class MenuActivity extends Activity {
 		emailToToken.put("shay@testfairy.com", "53e981a33c5511db282eea2b3478329b2a2b2be2");
 		emailToToken.put("gil@megidish.net", "e27cf8c46bb25d8986e21915d700e493b268df0b");
 
-		showApptokenSesector();
+		sharedPreferences = getApplicationContext().getSharedPreferences("testfairy.appToken", Context.MODE_PRIVATE);
+		if (sharedPreferences.contains("appToken")) {
+			String appToken = sharedPreferences.getString("appToken", "000");
+			TestFairy.begin(this, appToken);
+		} else {
+			showApptokenSesector();
+		}
 
 	}
 
@@ -162,6 +170,9 @@ public class MenuActivity extends Activity {
 
 					String strName = arrayAdapter.getItem(which);
 					final String appToken = emailToToken.get(strName);
+					SharedPreferences.Editor editor = sharedPreferences.edit();
+					editor.putString("appToken", appToken );
+					editor.commit();
 					AlertDialog.Builder builderInner = new AlertDialog.Builder(MenuActivity.this);
 					builderInner.setMessage(appToken);
 					builderInner.setTitle("Your Selected Item is");
