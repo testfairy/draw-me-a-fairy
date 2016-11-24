@@ -127,7 +127,7 @@ public class MenuActivity extends Activity {
 
 		emailToToken = new HashMap<String, String>();
 		emailToToken.put("tishma@testfairy.com", "b117aecfafe208d6481f3fc200d4f9a73d1686d2");
-		emailToToken.put("vijay@toptal.com", "adf3f2dd5b9e4bea101b6260183264d13efefaf8");
+		emailToToken.put("vijay@testfairy.com", "5b3af35e59a1e074e2d50675b1b629306cf0cfbd");
 		emailToToken.put("giltsl@gmail.com", "a79971822e08306fd2c7eb1c3f421ed3b0b497da");
 		emailToToken.put("yair@bar-on.org", "1723a5a3d56bde654b69b3c1a710d867e58f8bcd");
 		emailToToken.put("yuval@testfairy.com", "3574772872502bb1f6c735ae8b78d90b4732add3");
