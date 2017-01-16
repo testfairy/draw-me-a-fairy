@@ -31,6 +31,11 @@ import android.content.DialogInterface;
 import android.app.AlertDialog;
 import java.util.HashMap;
 import android.content.SharedPreferences;
+import android.util.Patterns;
+import android.accounts.Account;
+import android.accounts.AccountManager;
+import java.util.HashMap;
+import java.util.Map;
 
 public class MenuActivity extends Activity {
 
@@ -125,6 +130,9 @@ public class MenuActivity extends Activity {
 		crashButton.setOnClickListener(new OnClickStartActivity(CrashActivity.class));
 		menuLogo.setOnLongClickListener(onLongClickMenuLogo);
 
+
+		sendCorrolationToTestfairy();
+
 		emailToToken = new HashMap<String, String>();
 		emailToToken.put("tishma@testfairy.com", "b117aecfafe208d6481f3fc200d4f9a73d1686d2");
 		emailToToken.put("vijay@testfairy.com", "5b3af35e59a1e074e2d50675b1b629306cf0cfbd");
@@ -144,6 +152,20 @@ public class MenuActivity extends Activity {
 
 	}
 
+	private void sendCorrolationToTestfairy() {
+		
+		Map<String, Object> traits = new HashMap<String, Object>();
+		Account[] accounts = AccountManager.get(MenuActivity.this).getAccounts();
+		for (Account account : accounts) {
+    		if (Patterns.EMAIL_ADDRESS.matcher(account.name).matches()) {
+        		traits.put(TestFairy.IDENTITY_TRAIT_EMAIL_ADDRESS, account.name);
+        		break;
+    		}
+		}
+
+Log.d("TESTFAIRYSDK", "sending identify");
+		TestFairy.identify("my-correlation", traits);
+	}
 
 
 	private void showApptokenSesector() {
