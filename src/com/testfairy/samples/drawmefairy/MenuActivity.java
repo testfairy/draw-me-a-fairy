@@ -132,23 +132,25 @@ public class MenuActivity extends Activity {
 
 
 		sendCorrolationToTestfairy();
+		String appToken = "1723a5a3d56bde654b69b3c1a710d867e58f8bcd";
+		TestFairy.begin(this, appToken);
 
-		emailToToken = new HashMap<String, String>();
-		emailToToken.put("tishma@testfairy.com", "b117aecfafe208d6481f3fc200d4f9a73d1686d2");
-		emailToToken.put("vijay@testfairy.com", "5b3af35e59a1e074e2d50675b1b629306cf0cfbd");
-		emailToToken.put("giltsl@gmail.com", "a79971822e08306fd2c7eb1c3f421ed3b0b497da");
-		emailToToken.put("yair@bar-on.org", "1723a5a3d56bde654b69b3c1a710d867e58f8bcd");
-		emailToToken.put("yuval@testfairy.com", "3574772872502bb1f6c735ae8b78d90b4732add3");
-		emailToToken.put("shay@testfairy.com", "53e981a33c5511db282eea2b3478329b2a2b2be2");
-		emailToToken.put("gil@megidish.net", "e27cf8c46bb25d8986e21915d700e493b268df0b");
+		// emailToToken = new HashMap<String, String>();
+		// emailToToken.put("tishma@testfairy.com", "b117aecfafe208d6481f3fc200d4f9a73d1686d2");
+		// emailToToken.put("vijay@testfairy.com", "5b3af35e59a1e074e2d50675b1b629306cf0cfbd");
+		// emailToToken.put("giltsl@gmail.com", "a79971822e08306fd2c7eb1c3f421ed3b0b497da");
+		// emailToToken.put("yair@bar-on.org", "1723a5a3d56bde654b69b3c1a710d867e58f8bcd");
+		// emailToToken.put("yuval@testfairy.com", "3574772872502bb1f6c735ae8b78d90b4732add3");
+		// emailToToken.put("shay@testfairy.com", "53e981a33c5511db282eea2b3478329b2a2b2be2");
+		// emailToToken.put("gil@megidish.net", "e27cf8c46bb25d8986e21915d700e493b268df0b");
 
-		sharedPreferences = getApplicationContext().getSharedPreferences("testfairy.appToken", Context.MODE_PRIVATE);
-		if (sharedPreferences.contains("appToken")) {
-			String appToken = sharedPreferences.getString("appToken", "000");
-			TestFairy.begin(this, appToken);
-		} else {
-			showApptokenSesector();
-		}
+		// sharedPreferences = getApplicationContext().getSharedPreferences("testfairy.appToken", Context.MODE_PRIVATE);
+		// if (sharedPreferences.contains("appToken")) {
+		// 	String appToken = sharedPreferences.getString("appToken", "000");
+		// 	TestFairy.begin(this, appToken);
+		// } else {
+		// 	showApptokenSesector();
+		// }
 
 	}
 
@@ -163,7 +165,6 @@ public class MenuActivity extends Activity {
     		}
 		}
 
-Log.d("TESTFAIRYSDK", "sending identify");
 		TestFairy.identify("my-correlation", traits);
 	}
 
