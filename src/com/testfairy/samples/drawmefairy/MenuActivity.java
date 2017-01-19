@@ -29,13 +29,13 @@ import com.testfairy.TestFairy;
 import android.widget.ArrayAdapter;
 import android.content.DialogInterface;
 import android.app.AlertDialog;
-import java.util.HashMap;
 import android.content.SharedPreferences;
 import android.util.Patterns;
 import android.accounts.Account;
 import android.accounts.AccountManager;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.UUID;
 
 public class MenuActivity extends Activity {
 
@@ -159,13 +159,14 @@ public class MenuActivity extends Activity {
 		Map<String, Object> traits = new HashMap<String, Object>();
 		Account[] accounts = AccountManager.get(MenuActivity.this).getAccounts();
 		for (Account account : accounts) {
-    		if (Patterns.EMAIL_ADDRESS.matcher(account.name).matches()) {
-        		traits.put(TestFairy.IDENTITY_TRAIT_EMAIL_ADDRESS, account.name);
-        		break;
-    		}
+			if (Patterns.EMAIL_ADDRESS.matcher(account.name).matches()) {
+				traits.put(TestFairy.IDENTITY_TRAIT_EMAIL_ADDRESS, account.name);
+				break;
+			}
 		}
 
-		TestFairy.identify("my-correlation", traits);
+		String uuid = UUID.randomUUID().toString();
+		TestFairy.identify(uuid, traits);
 	}
 
 
