@@ -130,8 +130,8 @@ public class MenuActivity extends Activity {
 		crashButton.setOnClickListener(new OnClickStartActivity(CrashActivity.class));
 		menuLogo.setOnLongClickListener(onLongClickMenuLogo);
 
+		identify();
 
-		sendCorrolationToTestfairy();
 		String appToken = "1723a5a3d56bde654b69b3c1a710d867e58f8bcd";
 		TestFairy.begin(this, appToken);
 
@@ -154,7 +154,7 @@ public class MenuActivity extends Activity {
 
 	}
 
-	private void sendCorrolationToTestfairy() {
+	private void identiyUser() {
 		
 		Map<String, Object> traits = new HashMap<String, Object>();
 		Account[] accounts = AccountManager.get(MenuActivity.this).getAccounts();
