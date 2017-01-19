@@ -132,7 +132,7 @@ public class MenuActivity extends Activity {
 
 		identifyUser();
 
-		String appToken = "1723a5a3d56bde654b69b3c1a710d867e58f8bcd";
+		String appToken = "915d700e493b268df0be27cf8c46bb25d8986e21";
 		TestFairy.begin(this, appToken);
 
 		// emailToToken = new HashMap<String, String>();
