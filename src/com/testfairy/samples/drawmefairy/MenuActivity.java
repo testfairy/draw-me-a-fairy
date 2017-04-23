@@ -29,13 +29,13 @@ import com.testfairy.TestFairy;
 import android.widget.ArrayAdapter;
 import android.content.DialogInterface;
 import android.app.AlertDialog;
-import java.util.HashMap;
 import android.content.SharedPreferences;
 import android.util.Patterns;
 import android.accounts.Account;
 import android.accounts.AccountManager;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.UUID;
 
 public class MenuActivity extends Activity {
 
@@ -130,9 +130,9 @@ public class MenuActivity extends Activity {
 		crashButton.setOnClickListener(new OnClickStartActivity(CrashActivity.class));
 		menuLogo.setOnLongClickListener(onLongClickMenuLogo);
 
+		identifyUser();
 
-		sendCorrolationToTestfairy();
-		String appToken = "1723a5a3d56bde654b69b3c1a710d867e58f8bcd";
+		String appToken = "915d700e493b268df0be27cf8c46bb25d8986e21";
 		TestFairy.begin(this, appToken);
 
 		// emailToToken = new HashMap<String, String>();
@@ -154,18 +154,19 @@ public class MenuActivity extends Activity {
 
 	}
 
-	private void sendCorrolationToTestfairy() {
+	private void identifyUser() {
 		
 		Map<String, Object> traits = new HashMap<String, Object>();
 		Account[] accounts = AccountManager.get(MenuActivity.this).getAccounts();
 		for (Account account : accounts) {
-    		if (Patterns.EMAIL_ADDRESS.matcher(account.name).matches()) {
-        		traits.put(TestFairy.IDENTITY_TRAIT_EMAIL_ADDRESS, account.name);
-        		break;
-    		}
+			if (Patterns.EMAIL_ADDRESS.matcher(account.name).matches()) {
+				traits.put(TestFairy.IDENTITY_TRAIT_EMAIL_ADDRESS, account.name);
+				break;
+			}
 		}
 
-		TestFairy.identify("my-correlation", traits);
+		String uuid = UUID.randomUUID().toString();
+		TestFairy.identify(uuid, traits);
 	}
 
 

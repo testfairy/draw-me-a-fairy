@@ -3,7 +3,7 @@
 	package="draw.me.fairy"
 	android:versionCode="8"
 	android:versionName="sdk-1.4.15" >
-
+	
 	<uses-sdk
 		android:minSdkVersion="8"
 		android:targetSdkVersion="19" />
