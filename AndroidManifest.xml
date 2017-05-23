@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
 	package="draw.me.fairy"
-	android:versionCode="153"
+	android:versionCode="154"
 	android:versionName="sdk-1.4.17" >
 
 	<uses-sdk

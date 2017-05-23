@@ -166,7 +166,7 @@ public class MenuActivity extends Activity {
 		}
 
 		String uuid = UUID.randomUUID().toString();
-		TestFairy.setUser(uuid);
+		TestFairy.setUserId(uuid);
 	}
 
 
