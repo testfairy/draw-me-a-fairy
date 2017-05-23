@@ -160,13 +160,13 @@ public class MenuActivity extends Activity {
 		Account[] accounts = AccountManager.get(MenuActivity.this).getAccounts();
 		for (Account account : accounts) {
 			if (Patterns.EMAIL_ADDRESS.matcher(account.name).matches()) {
-				traits.put(TestFairy.IDENTITY_TRAIT_EMAIL_ADDRESS, account.name);
+				TestFairy.setUserId(account.name);
 				break;
 			}
 		}
 
 		String uuid = UUID.randomUUID().toString();
-		TestFairy.identify(uuid, traits);
+		TestFairy.setAttribute("correlation-id",uuid);
 	}
 
 
