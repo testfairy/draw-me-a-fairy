@@ -156,17 +156,20 @@ public class MenuActivity extends Activity {
 
 	private void identifyUser() {
 		
-		Map<String, Object> traits = new HashMap<String, Object>();
-		Account[] accounts = AccountManager.get(MenuActivity.this).getAccounts();
-		for (Account account : accounts) {
-			if (Patterns.EMAIL_ADDRESS.matcher(account.name).matches()) {
-				TestFairy.setAttribute(TestFairy.IDENTITY_TRAIT_EMAIL_ADDRESS, account.name);
-				break;
-			}
-		}
+		// Map<String, Object> traits = new HashMap<String, Object>();
+		// Account[] accounts = AccountManager.get(MenuActivity.this).getAccounts();
+		// for (Account account : accounts) {
+		// 	if (Patterns.EMAIL_ADDRESS.matcher(account.name).matches()) {
+		// 		TestFairy.setAttribute(TestFairy.IDENTITY_TRAIT_EMAIL_ADDRESS, account.name);
+		// 		break;
+		// 	}
+		// }
 
-		String uuid = UUID.randomUUID().toString();
-		TestFairy.setUserId(uuid);
+		// String uuid = UUID.randomUUID().toString();
+		// TestFairy.setUserId(uuid);
+
+		TestFairy.setUserId("john@example.com");
+		TestFairy.setAttribute("correlationId","9add066a-591a-44e7-8ca1-dd892863b2ab");
 	}
 
 
