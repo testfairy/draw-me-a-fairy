@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		android:background="@drawable/menu_background">
+
+	<ImageView
+		android:id="@+id/menu_logo"
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		android:layout_above="@+id/from_gallery"
+		android:src="@drawable/app_logo"/>
+
+	<Button
+		android:id="@+id/from_gallery"
+		android:layout_height="wrap_content"
+		android:layout_width="fill_parent"
+		android:text="Open From Gallery"
+		android:layout_above="@+id/blank_canvas"
+		android:drawableLeft="@android:drawable/ic_menu_gallery"
+		/>
+
+	<Button
+		android:id="@+id/blank_canvas"
+		android:layout_height="wrap_content"
+		android:layout_width="fill_parent"
+		android:text="Open Blank Canvas"
+		android:layout_centerVertical="true"
+		android:drawableLeft="@android:drawable/ic_menu_edit"
+		/>
+
+	<Button
+		android:id="@+id/about_app"
+		android:layout_height="wrap_content"
+		android:layout_width="fill_parent"
+		android:text="About App"
+		android:layout_below="@id/blank_canvas"
+		android:drawableLeft="@android:drawable/ic_menu_info_details"
+		/>
+
+	<Button
+		android:id="@+id/crash_button"
+		android:layout_height="wrap_content"
+		android:layout_width="fill_parent"
+		android:text="Do not press this button"
+		android:background="#FF0000"
+		android:layout_alignParentBottom="true"
+		android:layout_marginRight="5dp"
+		android:layout_marginLeft="5dp"
+		android:layout_marginBottom="10dp"
+		android:drawableLeft="@android:drawable/stat_sys_warning"
+		/>
+
+
+</RelativeLayout>

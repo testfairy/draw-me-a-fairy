@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:id="@+id/from_gallery_layout"
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent">
+	<include
+		android:id="@+id/top"
+		layout="@layout/top_panel"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_centerHorizontal="false"
+		/>
+	<RelativeLayout
+		android:id="@+id/drawing_container"
+		android:layout_below="@+id/top"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		>
+		<ImageView
+			android:id="@+id/img_from_gallery"
+			android:layout_width="fill_parent"
+			android:layout_height="fill_parent"
+			android:scaleType="centerCrop"/>
+
+		<com.testfairy.samples.drawmefairy.DrawingPanel
+			android:id="@+id/drawing_panel"
+			android:layout_width="fill_parent"
+			android:layout_height="fill_parent"/>
+	</RelativeLayout>
+</RelativeLayout>
