@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="app_name">Draw Me A Fairy</string>
+	<string name="please_turn_on_gps">Please turn on your GPS</string>
+	<string name="about_text">
+		"Draw Me Something" is a sample application for
+		demonstrating the TestFairy platform.\n
+		\n
+		With TestFairy you can easily inspect how others are using your app
+		by viewing a video of your app running on their device. Real devices,
+		real apps, real people.\n
+		\n
+		For more information, please visit www.testfairy.com
+	</string>
+</resources>

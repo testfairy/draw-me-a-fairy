@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:gravity="center"
+	android:layout_gravity="center" >
+
+	<AnalogClock
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:id="@+id/AnalogClock"
+		android:layout_centerInParent="true" >
+	</AnalogClock >
+	<!--
+		android:hand_minute="@drawable/minute"
+		android:hand_hour="@drawable/hour"
+		android:dial="@drawable/pen_icon"
+	-->
+
+
+	<ImageView
+		android:src="@drawable/second"
+		android:id="@+id/imgsecond"
+		android:layout_width="wrap_content"
+		android:layout_height="150dp"
+		android:layout_centerInParent="true" />
+</RelativeLayout >
+
+	<!--<?xml version="1.0" encoding="utf-8"?>-->
+
+	<!--<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+	<!--android:id="@+id/layout"-->
+	<!--android:layout_width="match_parent"-->
+	<!--android:layout_height="match_parent" >-->
+
+	<!--</RelativeLayout >-->

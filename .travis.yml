@@ -1,0 +1,30 @@
+language: android
+
+android:
+  components:
+    - build-tools-19.0.3
+    - android-19
+
+before_script:
+  - android update project -p . -n DrawMeFairy -t android-19
+  
+script:
+  - ant debug
+  
+before_deploy:
+  - # gem install multipart-post
+
+deploy:
+  provider: testfairy
+  app-file: bin/DrawMeFairy-debug.apk
+  keystore-file: /home/travis/.android/debug.keystore
+  storepass: android
+  alias: androiddebugkey
+  metrics: "cpu,memory,logcat"
+  skip_cleanup: true
+  on:
+    all_branches: true
+  api-key:
+    secure: "ekgTf2C1dPR2AtMmMS8qPncDaa6bmum7VQd8LLPmDe5k2XiTgGRL1H2/arvhc17uF7VgZunTzar/hM/haVqvZuLSPHeQvLdn9bxVQe5Aapy5d1LYx7pdHaVeeGOUBMb10gpMKCFpdbtpXK2zTpPxfkoYganma1Kdk2Vmh7MGb30="
+
+  
