@@ -10,6 +10,7 @@
 		android:layout_height="wrap_content"
 		android:layout_weight="1"
 		android:text="Small"
+		android:contentDescription="@string/small_brush_content_description"
 		android:tag="0"/>
 
 	<Button
@@ -18,6 +19,7 @@
 		android:layout_height="wrap_content"
 		android:layout_weight="1"
 		android:text="Medium"
+		android:contentDescription="@string/medium_brush_content_description"
 		android:tag="1"/>
 
 	<Button
@@ -26,6 +28,7 @@
 		android:layout_height="wrap_content"
 		android:layout_weight="1"
 		android:text="Large"
+		android:contentDescription="@string/large_brush_content_description"
 		android:tag="2"/>
 
 </LinearLayout>

@@ -12,4 +12,19 @@
 		\n
 		For more information, please visit www.testfairy.com
 	</string>
+    <string name="about_testfairy">About TestFairy</string>
+	<string name="small_brush_content_description">Small brush Selection</string>
+	<string name="medium_brush_content_description">Medium brush selection</string>
+	<string name="large_brush_content_description">Large brush selection</string>
+    <string name="clock_hand_content_description">Clock hand</string>
+    <string name="image_from_gallery_content_description">image from gallery</string>
+	<string name="open_from_gallery_content_description">open from gallery</string>
+	<string name="open_blank_canvas_content_description">open blank canvas</string>
+	<string name="about_app_content_description">about app</string>
+	<string name="crash_app_button_content_description">crash app button</string>
+	<string name="painter_picker_button_content_description">painter picker button</string>
+	<string name="erase_picker_button_content_description">erase picker button</string>
+	<string name="color_picker_button_content_description">color picker button</string>
+	<string name="save_button_content_description">save button</string>
+	<string name="share_button_content_description">share button</string>
 </resources>

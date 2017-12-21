@@ -20,6 +20,7 @@
 		android:text="Open From Gallery"
 		android:layout_above="@+id/blank_canvas"
 		android:drawableLeft="@android:drawable/ic_menu_gallery"
+		android:contentDescription="@string/open_from_gallery_content_description"
 		/>
 
 	<Button
@@ -29,6 +30,7 @@
 		android:text="Open Blank Canvas"
 		android:layout_centerVertical="true"
 		android:drawableLeft="@android:drawable/ic_menu_edit"
+		android:contentDescription="@string/open_blank_canvas_content_description"
 		/>
 
 	<Button
@@ -38,6 +40,7 @@
 		android:text="About App"
 		android:layout_below="@id/blank_canvas"
 		android:drawableLeft="@android:drawable/ic_menu_info_details"
+		android:contentDescription="@string/about_app_content_description"
 		/>
 
 	<Button
@@ -51,6 +54,7 @@
 		android:layout_marginLeft="5dp"
 		android:layout_marginBottom="10dp"
 		android:drawableLeft="@android:drawable/stat_sys_warning"
+		android:contentDescription="@string/crash_app_button_content_description"
 		/>
 
 

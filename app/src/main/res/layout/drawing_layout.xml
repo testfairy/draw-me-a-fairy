@@ -20,7 +20,8 @@
 			android:id="@+id/img_from_gallery"
 			android:layout_width="fill_parent"
 			android:layout_height="fill_parent"
-			android:scaleType="centerCrop"/>
+			android:scaleType="centerCrop"
+			android:contentDescription="@string/image_from_gallery_content_description"/>
 
 		<com.testfairy.samples.drawmefairy.DrawingPanel
 			android:id="@+id/drawing_panel"

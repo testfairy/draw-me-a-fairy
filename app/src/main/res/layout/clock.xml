@@ -23,7 +23,8 @@
 		android:id="@+id/imgsecond"
 		android:layout_width="wrap_content"
 		android:layout_height="150dp"
-		android:layout_centerInParent="true" />
+		android:layout_centerInParent="true"
+		android:contentDescription="@string/clock_hand_content_description"/>
 </RelativeLayout >
 
 	<!--<?xml version="1.0" encoding="utf-8"?>-->
