@@ -1,10 +1,12 @@
 package com.testfairy.samples.drawmefairy;
 
+import android.Manifest;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.ContentUris;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.location.Criteria;
 import android.location.Location;
@@ -261,6 +263,13 @@ public class MenuActivity extends Activity {
 	 * start location service, so TestFairy can demonstrate Geolocation
 	 */
 	private void startLocationService() {
+		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+			if (checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED
+					&& checkSelfPermission(Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+				return;
+			}
+		}
+
 		LocationManager locationManager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
 
 		Criteria locationCriteria = new Criteria();
