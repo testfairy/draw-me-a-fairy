@@ -1,13 +1,13 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 19
-    buildToolsVersion "25.0.2"
+    compileSdkVersion 27
+    buildToolsVersion "27.0.2"
 
     defaultConfig {
         applicationId "draw.me.fairy"
-        minSdkVersion 8
-        targetSdkVersion 19
+        minSdkVersion 13
+        targetSdkVersion 27
     }
 
     buildTypes {
@@ -19,5 +19,5 @@ android {
 }
 
 dependencies {
-    compile files('libs/testfairy-android-sdk.jar')
+    compile 'testfairy:testfairy-android-sdk:1.+@aar'
 }
