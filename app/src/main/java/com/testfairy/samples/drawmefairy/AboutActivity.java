@@ -15,6 +15,7 @@ import utils.ActivityTime;
 public class AboutActivity extends Activity {
 
 	private final String TAG = getClass().getSimpleName();
+
 	ActivityTime activityTime;
 	private String secretEasterEgg;
 
@@ -22,6 +23,7 @@ public class AboutActivity extends Activity {
 		super.onCreate(savedInstanceState);
 
 		Log.d(TAG, "onCreate " + TAG);
+
 		// hide title bar
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 

@@ -6,8 +6,11 @@ import android.content.SharedPreferences;
 import com.testfairy.TestFairy;
 
 import java.util.Random;
+import java.util.UUID;
 
 public class MyApplication extends Application {
+
+	private final String TAG = getClass().getSimpleName();
 
 	/**
 	 * Returns a random animal name, for example "Red Dragon"
@@ -47,7 +50,15 @@ public class MyApplication extends Application {
 	public void onCreate() {
 		super.onCreate();
 
+		// uncomment if you're using an on-premise or private-cloud configuration
+		// please see https://www.testfairy.com/enterprise for more information
+		// TestFairy.setServerEndpoint("https://mycorp.testfairy.com/services/");
+
 		TestFairy.setUserId(getAnimalName());
 		TestFairy.begin(this, "e27cf8c46bb25d8986e21915d700e493b268df0b");
+
+		// these logs are not visible in 'adb logcat', but are visible in testfairy
+		TestFairy.log(TAG, "Remote logging is enabled");
+		TestFairy.log(TAG, "Random UUID for this session is " + UUID.randomUUID().toString());
 	}
 }
