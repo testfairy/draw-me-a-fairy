@@ -6,6 +6,7 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+import com.testfairy.TestFairy;
 
 public class DrawingPanel extends View implements View.OnTouchListener {
 
@@ -85,8 +86,9 @@ public class DrawingPanel extends View implements View.OnTouchListener {
 			Log.e(TAG, "illegal brush size Index");
 			return;
 		}
+
 		if (brushSizeIndex == 2) {
-			Log.v("testfairy-checkpoint", "large brush user");
+			TestFairy.addEvent("Selected large brush");
 		}
 
 		Log.i(TAG, "set brush size to " + strokeWidth[brushSizeIndex]);

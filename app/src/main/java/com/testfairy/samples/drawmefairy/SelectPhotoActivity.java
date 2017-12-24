@@ -10,12 +10,10 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import draw.me.fairy.R;
+import com.testfairy.TestFairy;
 
 import java.lang.reflect.Field;
 
-/**
- * Created by gilt on 12/17/14.
- */
 public class SelectPhotoActivity extends Activity {
 
 	static int selectedPhotosCount = 0;
@@ -76,8 +74,9 @@ public class SelectPhotoActivity extends Activity {
 		public void onClick(View v) {
 			selectedPhotosCount++;
 			if (selectedPhotosCount == 3 || selectedPhotosCount == 4 || selectedPhotosCount == 7 || selectedPhotosCount == 10) {
-				Log.v("testfairy-checkpoint", selectedPhotosCount + " photos viewed");
+				TestFairy.addEvent("Photos viewed " + selectedPhotosCount + " times");
 			}
+
 //			Toast.makeText(SelectPhotoActivity.this, photoName, Toast.LENGTH_LONG).show();
 			Intent intent = new Intent(SelectPhotoActivity.this, DrawingActivity.class);
 			intent.putExtra(DrawingActivity.EXTRA_PICTURE_PATH, photoName);

@@ -28,6 +28,7 @@ import colorpicker.ColorPickerDialog;
 import colorpicker.ColorPickerDialog.OnColorSelectedListener;
 import draw.me.fairy.R;
 import utils.ActivityTime;
+import com.testfairy.TestFairy;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -241,7 +242,7 @@ public class DrawingActivity extends Activity {
 			outputStream.write(bytes.toByteArray());
 			if (!isTempFile) {
 				Toast.makeText(DrawingActivity.this, "Saved", Toast.LENGTH_LONG).show();
-				Log.v("testfairy-checkpoint", "Image saved");
+				TestFairy.addEvent("Image saved successfully");
 			}
 
 			Log.d(TAG, "The image was saved on " + imageFile.getPath());

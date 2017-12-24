@@ -1,7 +1,7 @@
 package utils;
 
 import android.os.CountDownTimer;
-import android.util.Log;
+import com.testfairy.TestFairy;
 
 public class ActivityTime extends CountDownTimer {
 
@@ -20,14 +20,11 @@ public class ActivityTime extends CountDownTimer {
 		int runTime = (int) (checkTime - (millisUntilFinished / 1000));
 
 		if (runTime % 10 == 0) {
-			Log.v("testfairy-checkpoint", activityName + " running for " + runTime + " sec");
+			TestFairy.addEvent(activityName + " running for " + runTime + " sec");
 		}
-//			Log.d(TAG, "Sec Until Finished =  " + runTime);
 	}
 
 	@Override
 	public void onFinish() {
-//		Log.v("testfairy-checkpoint", activityName + " running for more than " + checkTime + " sec");
-
 	}
 };
