@@ -9,6 +9,7 @@ android:
 
 script:
   - ./gradlew packageDebug
+  - find . -name "*.apk"
   
 deploy:
   provider: releases
