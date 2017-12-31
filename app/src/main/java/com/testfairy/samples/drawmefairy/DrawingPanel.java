@@ -168,6 +168,13 @@ public class DrawingPanel extends View implements View.OnTouchListener {
 		drawPath.reset();
 	}
 
+	public void onMotionMove(float touchX, float touchY) {
+
+		strokeCount++;
+		drawPath.lineTo(touchX, touchY);
+		drawCanvas.drawPath(drawPath, drawPaint);
+	}
+
 	@Override
 	public boolean onTouch(View arg0, MotionEvent event) {
 
@@ -178,9 +185,7 @@ public class DrawingPanel extends View implements View.OnTouchListener {
 				drawPath.moveTo(touchX, touchY);
 				break;
 			case MotionEvent.ACTION_MOVE:
-				strokeCount++;
-				drawPath.lineTo(touchX, touchY);
-				drawCanvas.drawPath(drawPath, drawPaint);
+				this.onMotionMove(touchX, touchY);
 				break;
 			case MotionEvent.ACTION_UP:
 				this.onMotionEventUp();
