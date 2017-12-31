@@ -9,12 +9,3 @@ android:
 
 script:
   - ./gradlew packageDebug
-  
-deploy:
-  provider: releases
-  api_key:
-    secure: DwRUVmCX96tMrlejyxK6fmDmG2Kp1dcBmvO6A65eowmu0Nl26USpS3QhMYIjoGqLUH312znzvd/IUMgnSJJiZsC53m3wgmj7uGfXxMLKmotoCueQOQ9DnWS+C4vM+yzPmy3vcFfm5hh1WwgMAct9R5gM+TNMWivdUvC/RFjAs2Y=
-  file: "./app/build/outputs/apk/debug/app-debug.apk"
-  on:
-    tags: true
-
