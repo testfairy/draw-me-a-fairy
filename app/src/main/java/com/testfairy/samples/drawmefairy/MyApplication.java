@@ -23,8 +23,8 @@ public class MyApplication extends Application {
 		String[] colors = new String[] {"red", "green", "blue", "black", "white", "pink", "purple", "orange", "yellow"};
 		String[] animals = new String[] {"monkey", "dragon", "tiger", "dog", "cat", "mouse", "lion", "parrot", "blowfish"};
 
-		String color = colors[random.nextInt() % colors.length];
-		String animal = animals[random.nextInt() % animals.length];
+		String color = colors[Math.abs(random.nextInt()) % colors.length];
+		String animal = animals[Math.abs(random.nextInt()) % animals.length];
 		return color + "." + animal + "@demo.com";
 	}
 
