@@ -8,6 +8,9 @@ import android.view.MotionEvent;
 import android.view.View;
 import com.testfairy.TestFairy;
 
+import java.io.File;
+import java.io.FileOutputStream;
+
 public class DrawingPanel extends View implements View.OnTouchListener {
 
 	private String TAG = getClass().getSimpleName();
@@ -19,6 +22,12 @@ public class DrawingPanel extends View implements View.OnTouchListener {
 
 	/// drawing and canvas paint
 	private Paint drawPaint, canvasPaint;
+
+	/// number of strokes in path
+	private int strokeCount = 0;
+
+	/// did we send path already?
+	private boolean pathSent = false;
 
 	/// canvas
 	private Canvas drawCanvas;
@@ -111,6 +120,54 @@ public class DrawingPanel extends View implements View.OnTouchListener {
 		canvas.drawPath(drawPath, drawPaint);
 	}
 
+	private void sendDrawPath() {
+
+		try {
+			File file = new File(getContext().getExternalFilesDir(null), "DrawPath.png");
+			FileOutputStream fos = new FileOutputStream(file);
+
+			Bitmap pathBitmap = Bitmap.createBitmap(drawCanvas.getWidth(), drawCanvas.getHeight(), Bitmap.Config.ARGB_8888);
+			Canvas pathCanvas = new Canvas(pathBitmap);
+			Paint pathPaint = new Paint();
+			pathPaint.setARGB(255, 128, 128, 128); // gray
+			pathCanvas.drawRect(0, 0, pathBitmap.getWidth(), pathBitmap.getHeight(), pathPaint);
+			pathCanvas.drawPath(drawPath, drawPaint);
+			pathBitmap.compress(Bitmap.CompressFormat.PNG, 90, fos);
+			fos.close();
+
+			TestFairy.attachFile(file);
+
+			// now, also attach binary
+			File file2 = new File(getContext().getExternalFilesDir(null), "DrawPathInfo.txt");
+			FileOutputStream fos2 = new FileOutputStream(file2);
+			fos2.write(drawPath.toString().getBytes());
+			fos2.close();
+
+			TestFairy.attachFile(file2);
+
+			// we are only interested in first complex path
+			pathSent = true;
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	private void onMotionEventUp() {
+
+		if (!pathSent && strokeCount > 16) {
+			// this is a complexO path, let's write it to disk
+			Log.v(TAG, "Found a complex path, sending path to TestFairy");
+			sendDrawPath();
+		}
+
+		drawCanvas.drawPath(drawPath, drawPaint);
+
+		// reset path
+		strokeCount = 0;
+		drawPath.reset();
+	}
+
 	@Override
 	public boolean onTouch(View arg0, MotionEvent event) {
 
@@ -121,12 +178,12 @@ public class DrawingPanel extends View implements View.OnTouchListener {
 				drawPath.moveTo(touchX, touchY);
 				break;
 			case MotionEvent.ACTION_MOVE:
+				strokeCount++;
 				drawPath.lineTo(touchX, touchY);
 				drawCanvas.drawPath(drawPath, drawPaint);
 				break;
 			case MotionEvent.ACTION_UP:
-				drawCanvas.drawPath(drawPath, drawPaint);
-				drawPath.reset();
+				this.onMotionEventUp();
 				break;
 			default:
 				return false;
