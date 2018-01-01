@@ -9,7 +9,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import draw.me.fairy.R;
 import com.testfairy.TestFairy;
 
 import java.lang.reflect.Field;

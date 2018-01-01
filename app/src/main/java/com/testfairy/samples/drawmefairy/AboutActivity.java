@@ -9,7 +9,6 @@ import android.view.animation.Animation;
 import android.view.animation.LinearInterpolator;
 import android.view.animation.RotateAnimation;
 import android.widget.ImageView;
-import draw.me.fairy.R;
 import utils.ActivityTime;
 
 public class AboutActivity extends Activity {
@@ -39,7 +38,7 @@ public class AboutActivity extends Activity {
 		image.setOnLongClickListener(new View.OnLongClickListener() {
 			@Override
 			public boolean onLongClick(View view) {
-//				crash
+				// crash
 				secretEasterEgg.length();
 				return false;
 			}

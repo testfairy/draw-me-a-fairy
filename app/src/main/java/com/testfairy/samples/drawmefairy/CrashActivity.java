@@ -5,13 +5,8 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.widget.TextView;
 import android.widget.Toast;
-import draw.me.fairy.R;
 
-/**
- * Created by gilt on 12/17/14.
- */
 public class CrashActivity extends Activity {
-
 
 	private final long startTime = 5 * 1000;
 	private final long interval = 1 * 1000;
@@ -44,7 +39,6 @@ public class CrashActivity extends Activity {
 			text.setText("Time's up!");
 			text = null;
 			text.toString();
-
 		}
 
 		@Override

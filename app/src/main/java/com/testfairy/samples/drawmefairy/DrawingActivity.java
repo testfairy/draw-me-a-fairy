@@ -26,7 +26,6 @@ import android.widget.ImageView;
 import android.widget.Toast;
 import colorpicker.ColorPickerDialog;
 import colorpicker.ColorPickerDialog.OnColorSelectedListener;
-import draw.me.fairy.R;
 import utils.ActivityTime;
 import com.testfairy.TestFairy;
 
@@ -107,9 +106,9 @@ public class DrawingActivity extends Activity {
 			if (isImageSaved) {
 				Intent shareIntent = new Intent(Intent.ACTION_SEND);
 				shareIntent.setType("image/jpeg");
-				shareIntent.putExtra(Intent.EXTRA_STREAM, Uri.parse("file:///sdcard/Pictures/testFairyDemoToShare.jpg"));
+				shareIntent.putExtra(Intent.EXTRA_STREAM, Uri.parse(Environment.getExternalStorageDirectory().getPath() + "/testFairyDemoToShare.jpg"));
 				startActivity(Intent.createChooser(shareIntent, "Share Image"));
-				Log.v("testfairy-checkpoint", "Image shared");
+				TestFairy.addEvent("Image shared");
 			} else {
 				Toast.makeText(DrawingActivity.this, "Share failed, please try again", Toast.LENGTH_LONG).show();
 			}

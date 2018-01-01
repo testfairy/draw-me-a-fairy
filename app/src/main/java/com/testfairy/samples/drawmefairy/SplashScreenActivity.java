@@ -2,16 +2,12 @@ package com.testfairy.samples.drawmefairy;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.animation.Animation;
 import android.view.animation.LinearInterpolator;
 import android.view.animation.RotateAnimation;
 import android.widget.ImageView;
-import draw.me.fairy.R;
-
-import java.util.Random;
 
 public class SplashScreenActivity extends Activity {
 

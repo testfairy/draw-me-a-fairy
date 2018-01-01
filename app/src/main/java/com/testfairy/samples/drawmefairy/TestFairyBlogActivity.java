@@ -4,12 +4,8 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
 import android.webkit.WebView;
-import draw.me.fairy.R;
 import utils.ActivityTime;
 
-/**
- * Created by gilt on 12/17/14.
- */
 public class TestFairyBlogActivity extends Activity {
 
 	private final String TAG = getClass().getSimpleName();

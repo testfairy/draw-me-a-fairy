@@ -12,6 +12,10 @@ public class MyApplication extends Application {
 
 	private final String TAG = getClass().getSimpleName();
 
+	/// app_token is taken from https://app.testfairy.com/settings/
+	/// please remember to change this if you're cloning the repo
+	private final String APP_TOKEN = "b5f48b5b410537bbb8781507af019e07307f2eac";
+
 	/**
 	 * Returns a random animal name, for example "Red Dragon"
 	 *
@@ -40,7 +44,7 @@ public class MyApplication extends Application {
 		if (name == null) {
 			// randomize on first launch
 			name = randomizeAnimalName();
-			preferences.edit().putString("name", name).commit();
+			preferences.edit().putString("name", name).apply();
 		}
 
 		return name;
@@ -55,7 +59,7 @@ public class MyApplication extends Application {
 		// TestFairy.setServerEndpoint("https://mycorp.testfairy.com/services/");
 
 		TestFairy.setUserId(getAnimalName());
-		TestFairy.begin(this, "e27cf8c46bb25d8986e21915d700e493b268df0b");
+		TestFairy.begin(this, APP_TOKEN);
 
 		// these logs are not visible in 'adb logcat', but are visible in testfairy
 		TestFairy.log(TAG, "Remote logging is enabled");

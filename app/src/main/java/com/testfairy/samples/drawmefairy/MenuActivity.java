@@ -26,7 +26,6 @@ import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.Toast;
-import draw.me.fairy.R;
 import com.testfairy.TestFairy;
 
 public class MenuActivity extends Activity {

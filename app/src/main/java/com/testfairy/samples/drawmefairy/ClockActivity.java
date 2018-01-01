@@ -7,13 +7,9 @@ import android.view.animation.Animation;
 import android.view.animation.LinearInterpolator;
 import android.view.animation.RotateAnimation;
 import android.widget.ImageView;
-import draw.me.fairy.R;
 
 import java.util.Date;
 
-/**
- * Created by gilt on 12/17/14.
- */
 public class ClockActivity extends Activity {
 	private final String TAG = getClass().getSimpleName();
 	private ImageView img;
