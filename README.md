@@ -19,5 +19,7 @@ With this sample application, we show how to use features of the platform, inclu
 ```
 NOTE: 
 
-To run this app on your own device, please clone and open the project using Android Studio. Then open MyApplication.java file, and change the APP_TOKEN to your value. See https://app.testfairy.com/settings/ for more information.
+To run this app on your own device, please clone and open the project using Android Studio. 
+Then open MyApplication.java file, and change the APP_TOKEN to your value. 
+See https://app.testfairy.com/settings/ for more information.
 ```
