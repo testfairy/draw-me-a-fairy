@@ -1,5 +1,3 @@
-[![Build Status](https://travis-ci.org/testfairy/draw-me-a-fairy.svg?branch=master)](https://travis-ci.org/testfairy/draw-me-a-fairy)
-
 # Draw Me A Fairy
 
 *Draw Me A Fairy* is a sample application using TestFairy SDK. 
@@ -12,9 +10,9 @@ With this sample application, we show how to use features of the platform, inclu
 - Recording videos of app use
 - Identifying users, for future searches ([src](https://github.com/testfairy/draw-me-a-fairy/blob/master/app/src/main/java/com/testfairy/samples/drawmefairy/MyApplication.java#L57))
 - Capturing logs, and sending them to TestFairy
-- Remote Logging (logs not written to logcat, but are sent to TestFairy) ([src](https://github.com/testfairy/draw-me-a-fairy/blob/master/app/src/main/java/com/testfairy/samples/drawmefairy/MyApplication.java#L60))
+- Remote Logging (logs not written to logcat, but are sent to TestFairy) ([src](https://github.com/testfairy/draw-me-a-fairy/blob/master/app/src/main/java/com/testfairy/samples/drawmefairy/MyApplication.java#L61))
 - Adding events after specific user interactions ([src](https://github.com/testfairy/draw-me-a-fairy/blob/master/app/src/main/java/com/testfairy/samples/drawmefairy/DrawingActivity.java#L245))
-- Attaching files for future inspections ([src](https://github.com/testfairy/draw-me-a-fairy/blob/master/app/src/main/java/com/testfairy/samples/drawmefairy/DrawingPanel.java#L123))
+- Attaching files for future inspections ([src](https://github.com/testfairy/draw-me-a-fairy/blob/master/app/src/main/java/com/testfairy/samples/drawmefairy/DrawingPanel.java#L138))
 
 ```
 NOTE: 
