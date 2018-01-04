@@ -14,7 +14,7 @@ public class MyApplication extends Application {
 
 	/// app_token is taken from https://app.testfairy.com/settings/
 	/// please remember to change this if you're cloning the repo
-	private final String APP_TOKEN = "b5f48b5b410537bbb8781507af019e07307f2eac";
+	private final String APP_TOKEN = <PUT YOUR APP TOKEN HERE>
 
 	/**
 	 * Returns a random animal name, for example "Red Dragon"
