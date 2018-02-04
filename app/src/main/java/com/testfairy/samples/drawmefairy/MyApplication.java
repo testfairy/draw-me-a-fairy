@@ -60,6 +60,7 @@ public class MyApplication extends Application {
 
 		TestFairy.setUserId(getAnimalName());
 		TestFairy.begin(this, APP_TOKEN);
+		TestFairy.hideView(R.id.hidden);
 
 		// these logs are not visible in 'adb logcat', but are visible in testfairy
 		TestFairy.log(TAG, "Remote logging is enabled");

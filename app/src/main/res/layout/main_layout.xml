@@ -43,11 +43,27 @@
 		android:contentDescription="@string/about_app_content_description"
 		/>
 
+	<TextView
+		android:id="@+id/hidden"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_above="@+id/crash_button"
+		android:layout_alignStart="@+id/crash_button"
+		android:layout_alignLeft="@+id/crash_button"
+		android:layout_alignEnd="@+id/crash_button"
+		android:layout_alignRight="@+id/crash_button"
+		android:layout_marginBottom="16dp"
+		android:background="@android:color/holo_red_dark"
+		android:gravity="center"
+		android:text="Your secret animal is 'Hippo'"
+		android:textColor="@android:color/white"
+		android:textSize="18sp" />
+
 	<Button
 		android:id="@+id/crash_button"
 		android:layout_height="wrap_content"
 		android:layout_width="fill_parent"
-		android:text="Crash"
+		android:text="Crash This App"
 		android:layout_alignParentBottom="true"
 		android:layout_marginRight="5dp"
 		android:layout_marginLeft="5dp"
