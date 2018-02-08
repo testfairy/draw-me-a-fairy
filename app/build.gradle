@@ -5,7 +5,7 @@ android {
     buildToolsVersion "27.0.2"
 
     defaultConfig {
-        applicationId "draw.me.fairy"
+        applicationId "com.testfairy.samples.drawmefairy"
         minSdkVersion 14
         targetSdkVersion 27
     }
@@ -27,5 +27,6 @@ android {
 
 dependencies {
     compile 'testfairy:testfairy-android-sdk:1.+@aar'
+    //compile 'testfairy:testfairy-android-sdk:release@aar'
     implementation 'com.squareup.okhttp3:okhttp:3.9.1'
 }
