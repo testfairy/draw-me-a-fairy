@@ -156,7 +156,7 @@ public class DrawingPanel extends View implements View.OnTouchListener {
 	private void onMotionEventUp() {
 
 		if (!pathSent && strokeCount > 16) {
-			// this is a complexO path, let's write it to disk
+			// this is a complex path, let's write it to disk
 			Log.v(TAG, "Found a complex path, sending path to TestFairy");
 			sendDrawPath();
 		}
