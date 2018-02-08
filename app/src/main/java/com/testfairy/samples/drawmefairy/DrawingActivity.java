@@ -24,9 +24,16 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
+
 import colorpicker.ColorPickerDialog;
 import colorpicker.ColorPickerDialog.OnColorSelectedListener;
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
 import utils.ActivityTime;
+
 import com.testfairy.TestFairy;
 
 import java.io.*;
@@ -128,6 +135,20 @@ public class DrawingActivity extends Activity {
 		}
 	};
 
+	private void makeNetworkRequest() {
+		OkHttpClient client = new OkHttpClient.Builder()
+			.addInterceptor(new CustomHttpMetricsLogger())
+			.build();
+
+		Request request = new Request.Builder()
+			.url("https://www.testfairy.com/_drawmefairy/painter-launched")
+			.build();
+		client.newCall(request).enqueue(new Callback() {
+			@Override public void onFailure(Call call, IOException e) {}
+			@Override public void onResponse(Call call, Response response) throws IOException {}
+		});
+	}
+
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		Log.d(TAG, "onCreate " + TAG);
@@ -185,16 +206,17 @@ public class DrawingActivity extends Activity {
 		bitmapColor.eraseColor(Color.WHITE);
 		colorPickerButton.setImageBitmap(bitmapColor);
 
+		makeNetworkRequest();
 	}
 
 	@Override
 	public void onBackPressed() {
 		new AlertDialog.Builder(this)
-		    .setTitle("Exit and Save")
-		    .setMessage("Do you want to save the image?")
-		    .setPositiveButton("Save and exit", onExitEndSaveClick)
-		    .setNegativeButton("Exit", onExitWithoutSaveClick)
-		    .create().show();
+			.setTitle("Exit and Save")
+			.setMessage("Do you want to save the image?")
+			.setPositiveButton("Save and exit", onExitEndSaveClick)
+			.setNegativeButton("Exit", onExitWithoutSaveClick)
+			.create().show();
 
 	}
 
