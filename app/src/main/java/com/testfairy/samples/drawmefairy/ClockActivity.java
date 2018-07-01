@@ -33,12 +33,8 @@ public class ClockActivity extends Activity {
 				try {
 
 					Date dt = new Date();
-					int hours = dt.getHours();
-					int minutes = dt.getMinutes();
 					int seconds = 60 - dt.getSeconds();
-					String curTime = hours + ":" + minutes + "::" + seconds;
-//					Log.v(TAG, "Current Time is: " + curTime);
-					img = (ImageView) findViewById(R.id.imgsecond);
+					img = findViewById(R.id.imgsecond);
 					RotateAnimation rotateAnimation = new RotateAnimation(
 					    (seconds + 1) * 6, seconds * 6,
 					    Animation.RELATIVE_TO_SELF, 0.5f,

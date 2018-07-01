@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 27
-    buildToolsVersion "27.0.2"
+    buildToolsVersion '27.0.3'
 
     defaultConfig {
         applicationId "com.testfairy.samples.drawmefairy"
@@ -16,17 +16,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
     }
-    dexOptions {
-        incremental false
-    }
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_6
-        targetCompatibility JavaVersion.VERSION_1_6
-    }
 }
 
 dependencies {
-    compile 'testfairy:testfairy-android-sdk:1.+@aar'
+    implementation 'testfairy:testfairy-android-sdk:1.+@aar'
     //compile 'testfairy:testfairy-android-sdk:release@aar'
-    implementation 'com.squareup.okhttp3:okhttp:3.9.1'
+    implementation 'com.squareup.okhttp3:okhttp:3.10.0'
 }
