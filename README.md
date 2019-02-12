@@ -27,7 +27,7 @@ See https://app.testfairy.com/settings/ for more information.
 
 ## How to build
 
-*Draw Me A Fairy* comes with 2 product flavors. One flavor support audio recordings during the app is foreground. The other flavor disables audio entirely.
+*Draw Me A Fairy* comes with 2 product flavors. One flavors support audio recordings during the app is foreground. The other flavor disables audio entirely.
 
 If you want to build the version without the audio, run the command below in project directory to create the apk.
 ```bash
@@ -42,3 +42,5 @@ If you want to build the version with the enabled audio, run the command below i
 
 # or ./gradlew assembleAudioDebug
 ```
+
+If you want to enable audio in your existing, SDK-enabled app, see [TFAudioRecord](https://github.com/testfairy-blog/TFAudioRecord) repo to find out how.
