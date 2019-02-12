@@ -100,6 +100,8 @@ public class MenuActivity extends Activity {
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
+		if (BuildConfig.FLAVOR.contains("audio")) TestFairyAudioRecord.begin(getApplicationContext());
+
 		Log.d(TAG, "onCreate");
 		super.onCreate(savedInstanceState);
 
@@ -120,8 +122,6 @@ public class MenuActivity extends Activity {
 		aboutButton.setOnClickListener(new OnClickStartActivity(AboutActivity.class));
 		crashButton.setOnClickListener(new OnClickStartActivity(CrashActivity.class));
 		menuLogo.setOnLongClickListener(onLongClickMenuLogo);
-
-		if (BuildConfig.FLAVOR.contains("audio")) TestFairyAudioRecord.begin(getApplicationContext());
 	}
 
 	@Override

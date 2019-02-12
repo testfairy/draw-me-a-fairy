@@ -8,6 +8,9 @@ android {
         applicationId "com.testfairy.samples.drawmefairy"
         minSdkVersion 14
         targetSdkVersion 28
+
+        versionCode 3
+        versionName "1.6.1"
     }
 
     buildTypes {
@@ -22,23 +25,20 @@ android {
         regular {
             dimension "features"
             applicationId "com.testfairy.samples.drawmefairy"
-            versionNameSuffix ""
 
-            buildConfigField "String", "APP_TOKEN", "915d700e493b268df0be27cf8c46bb25d8986e21"
+            buildConfigField "String", "APP_TOKEN", '"PLACE_YOUR_TOKEN_HERE"'
         }
 
         audio {
             dimension "features"
             applicationId "com.drawmeafairy.audio"
-            versionNameSuffix "-with-audio"
 
-            buildConfigField "String", "APP_TOKEN", "915d700e493b268df0be27cf8c46bb25d8986e21"
+            buildConfigField "String", "APP_TOKEN", '"PLACE_YOUR_TOKEN_HERE"'
         }
     }
 }
 
 dependencies {
     implementation 'testfairy:testfairy-android-sdk:1.+@aar'
-    //compile 'testfairy:testfairy-android-sdk:release@aar'
     implementation 'com.squareup.okhttp3:okhttp:3.10.0'
 }
