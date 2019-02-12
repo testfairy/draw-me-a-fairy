@@ -24,7 +24,7 @@ android {
             applicationId "com.testfairy.samples.drawmefairy"
             versionNameSuffix ""
 
-            buildConfigField "String", "APP_TOKEN", 'PUT_YOUR_APP_TOKEN_HERE'
+            buildConfigField "String", "APP_TOKEN", "915d700e493b268df0be27cf8c46bb25d8986e21"
         }
 
         audio {
@@ -32,7 +32,7 @@ android {
             applicationId "com.drawmeafairy.audio"
             versionNameSuffix "-with-audio"
 
-            buildConfigField "String", "APP_TOKEN", 'PUT_YOUR_APP_TOKEN_HERE'
+            buildConfigField "String", "APP_TOKEN", "915d700e493b268df0be27cf8c46bb25d8986e21"
         }
     }
 }
