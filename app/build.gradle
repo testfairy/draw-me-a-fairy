@@ -17,22 +17,22 @@ android {
         }
     }
 
-    flavorDimensions "version"
+    flavorDimensions "features"
     productFlavors {
         regular {
-            dimension "version"
+            dimension "features"
             applicationId "com.testfairy.samples.drawmefairy"
             versionNameSuffix ""
 
-            buildConfigField "String", "APP_TOKEN", "<PUT YOUR APP TOKEN HERE>"
+            buildConfigField "String", "APP_TOKEN", 'PUT_YOUR_APP_TOKEN_HERE'
         }
 
         audio {
-            dimension "version"
+            dimension "features"
             applicationId "com.drawmeafairy.audio"
             versionNameSuffix "-with-audio"
 
-            buildConfigField "String", "APP_TOKEN", "<PUT YOUR APP TOKEN HERE>"
+            buildConfigField "String", "APP_TOKEN", 'PUT_YOUR_APP_TOKEN_HERE'
         }
     }
 }

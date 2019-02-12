@@ -8,6 +8,8 @@ import com.testfairy.TestFairy;
 import java.util.Random;
 import java.util.UUID;
 
+import audio.TestFairyAudioRecord;
+
 public class MyApplication extends Application {
 
 	private final String TAG = getClass().getSimpleName();
