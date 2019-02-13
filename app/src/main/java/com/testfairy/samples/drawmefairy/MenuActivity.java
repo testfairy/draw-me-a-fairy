@@ -28,6 +28,8 @@ import android.widget.Button;
 import android.widget.Toast;
 import com.testfairy.TestFairy;
 
+import audio.TestFairyAudioRecord;
+
 public class MenuActivity extends Activity {
 
 	private static final int SELECT_PICTURE_REQUEST_CODE = 1;
@@ -98,6 +100,8 @@ public class MenuActivity extends Activity {
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
+		if (BuildConfig.FLAVOR.contains("audio")) TestFairyAudioRecord.begin(getApplicationContext());
+
 		Log.d(TAG, "onCreate");
 		super.onCreate(savedInstanceState);
 
@@ -118,9 +122,13 @@ public class MenuActivity extends Activity {
 		aboutButton.setOnClickListener(new OnClickStartActivity(AboutActivity.class));
 		crashButton.setOnClickListener(new OnClickStartActivity(CrashActivity.class));
 		menuLogo.setOnLongClickListener(onLongClickMenuLogo);
+	}
 
+	@Override
+	public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+		super.onRequestPermissionsResult(requestCode, permissions, grantResults);
 
-
+		if (BuildConfig.FLAVOR.contains("audio")) TestFairyAudioRecord.onRequestPermissionsResult(requestCode, permissions, grantResults);
 	}
 
 	@Override

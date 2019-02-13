@@ -1,13 +1,16 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 27
-    buildToolsVersion '27.0.3'
+    compileSdkVersion 28
+    buildToolsVersion '28.0.3'
 
     defaultConfig {
         applicationId "com.testfairy.samples.drawmefairy"
-        minSdkVersion 14
-        targetSdkVersion 27
+        minSdkVersion 16
+        targetSdkVersion 28
+
+        versionCode 4
+        versionName "1.6.2"
     }
 
     buildTypes {
@@ -16,10 +19,26 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
     }
+
+    flavorDimensions "features"
+    productFlavors {
+        regular {
+            dimension "features"
+            applicationId "com.testfairy.samples.drawmefairy"
+
+            buildConfigField "String", "APP_TOKEN", '"PUT_YOUR_TOKEN_HERE"'
+        }
+
+        audio {
+            dimension "features"
+            applicationId "com.drawmeafairy.audio"
+
+            buildConfigField "String", "APP_TOKEN", '"PUT_YOUR_TOKEN_HERE"'
+        }
+    }
 }
 
 dependencies {
     implementation 'testfairy:testfairy-android-sdk:1.+@aar'
-    //compile 'testfairy:testfairy-android-sdk:release@aar'
     implementation 'com.squareup.okhttp3:okhttp:3.10.0'
 }

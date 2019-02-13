@@ -8,13 +8,15 @@ import com.testfairy.TestFairy;
 import java.util.Random;
 import java.util.UUID;
 
+import audio.TestFairyAudioRecord;
+
 public class MyApplication extends Application {
 
 	private final String TAG = getClass().getSimpleName();
 
 	/// app_token is taken from https://app.testfairy.com/settings/
 	/// please remember to change this if you're cloning the repo
-	private final String APP_TOKEN = "<PUT YOUR APP TOKEN HERE>";
+	private final String APP_TOKEN = BuildConfig.APP_TOKEN;
 
 	/**
 	 * Returns a random animal name, for example "Red Dragon"
