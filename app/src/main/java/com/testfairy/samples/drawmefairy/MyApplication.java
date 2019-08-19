@@ -8,15 +8,9 @@ import com.testfairy.TestFairy;
 import java.util.Random;
 import java.util.UUID;
 
-import audio.TestFairyAudioRecord;
-
 public class MyApplication extends Application {
 
 	private final String TAG = getClass().getSimpleName();
-
-	/// app_token is taken from https://app.testfairy.com/settings/
-	/// please remember to change this if you're cloning the repo
-	private final String APP_TOKEN = BuildConfig.APP_TOKEN;
 
 	/**
 	 * Returns a random animal name, for example "Red Dragon"
@@ -26,8 +20,8 @@ public class MyApplication extends Application {
 	private String randomizeAnimalName() {
 
 		Random random = new Random();
-		String[] colors = new String[] {"red", "green", "blue", "black", "white", "pink", "purple", "orange", "yellow"};
-		String[] animals = new String[] {"monkey", "dragon", "tiger", "dog", "cat", "mouse", "lion", "parrot", "blowfish"};
+		String[] colors = new String[]{"red", "green", "blue", "black", "white", "pink", "purple", "orange", "yellow"};
+		String[] animals = new String[]{"monkey", "dragon", "tiger", "dog", "cat", "mouse", "lion", "parrot", "blowfish"};
 
 		String color = colors[Math.abs(random.nextInt()) % colors.length];
 		String animal = animals[Math.abs(random.nextInt()) % animals.length];
@@ -58,10 +52,15 @@ public class MyApplication extends Application {
 
 		// uncomment if you're using an on-premise or private-cloud configuration
 		// please see https://www.testfairy.com/enterprise for more information
-		// TestFairy.setServerEndpoint("https://mycorp.testfairy.com/services/");
+		/// app_token is taken from https://app.testfairy.com/settings/
+		/// please remember to change this if you're cloning the repo
+
+		TestFairyData testFairyData = new TestFairyDataReader().read(this);
+
+		TestFairy.setServerEndpoint(testFairyData.getServerEndpoint());
 
 		TestFairy.setUserId(getAnimalName());
-		TestFairy.begin(this, APP_TOKEN);
+		TestFairy.begin(this, testFairyData.getAppToken());
 		TestFairy.hideView(R.id.hidden);
 
 		// these logs are not visible in 'adb logcat', but are visible in testfairy

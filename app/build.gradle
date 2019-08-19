@@ -25,15 +25,11 @@ android {
         regular {
             dimension "features"
             applicationId "com.testfairy.samples.drawmefairy"
-
-            buildConfigField "String", "APP_TOKEN", '"PUT_YOUR_TOKEN_HERE"'
         }
 
         audio {
             dimension "features"
             applicationId "com.drawmeafairy.audio"
-
-            buildConfigField "String", "APP_TOKEN", '"PUT_YOUR_TOKEN_HERE"'
         }
     }
 }
