@@ -32,15 +32,15 @@ See https://app.testfairy.com/settings/ for more information.
 If you want to build the version without the audio, run the command below in project directory to create the apk.
 ```bash
 ./gradlew assembleRegularRelease
-
-# or ./gradlew assembleRegularDebug 
+# or
+./gradlew assembleRegularDebug 
 ```
 
 If you want to build the version with the enabled audio, run the command below instead.
 ```bash
 ./gradlew assembleAudioRelease
-
-# or ./gradlew assembleAudioDebug
+# or 
+./gradlew assembleAudioDebug
 ```
 
 If you want to enable audio in your existing, SDK-enabled app, see [TFAudioRecord](https://github.com/testfairy-blog/TFAudioRecord) repo to find out how.
