@@ -8,43 +8,11 @@ import com.testfairy.TestFairy;
 import java.util.Random;
 import java.util.UUID;
 
+import utils.AnimalName;
+
 public class MyApplication extends Application {
 
 	private final String TAG = getClass().getSimpleName();
-
-	/**
-	 * Returns a random animal name, for example "Red Dragon"
-	 *
-	 * @return string
-	 */
-	private String randomizeAnimalName() {
-
-		Random random = new Random();
-		String[] colors = new String[]{"red", "green", "blue", "black", "white", "pink", "purple", "orange", "yellow"};
-		String[] animals = new String[]{"monkey", "dragon", "tiger", "dog", "cat", "mouse", "lion", "parrot", "blowfish"};
-
-		String color = colors[Math.abs(random.nextInt()) % colors.length];
-		String animal = animals[Math.abs(random.nextInt()) % animals.length];
-		return color + "." + animal + "@demo.com";
-	}
-
-	/**
-	 * Returns animal name that is stored on device. Will randomize on the first run
-	 *
-	 * @return string
-	 */
-	private String getAnimalName() {
-
-		SharedPreferences preferences = getSharedPreferences("user_details", MODE_PRIVATE);
-		String name = preferences.getString("name", null);
-		if (name == null) {
-			// randomize on first launch
-			name = randomizeAnimalName();
-			preferences.edit().putString("name", name).apply();
-		}
-
-		return name;
-	}
 
 	@Override
 	public void onCreate() {
@@ -59,7 +27,7 @@ public class MyApplication extends Application {
 
 		TestFairy.setServerEndpoint(testFairyData.getServerEndpoint());
 
-		TestFairy.setUserId(getAnimalName());
+		TestFairy.setUserId(AnimalName.getAnimaEmail(this));
 		TestFairy.begin(this, testFairyData.getAppToken());
 		TestFairy.hideView(R.id.hidden);
 

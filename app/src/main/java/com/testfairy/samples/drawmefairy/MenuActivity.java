@@ -25,10 +25,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 import com.testfairy.TestFairy;
 
 import audio.TestFairyAudioRecord;
+import utils.AnimalName;
 
 public class MenuActivity extends Activity {
 
@@ -110,6 +112,9 @@ public class MenuActivity extends Activity {
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 
 		setContentView(R.layout.main_layout);
+
+		((TextView)findViewById(R.id.hidden)).setText("Your secret animal is ("+ AnimalName.getAnimalName(this) +")");
+		((TextView)findViewById(R.id.version)).setText("Version: " + BuildConfig.VERSION_CODE + " - " + BuildConfig.VERSION_NAME);
 
 		Button fromGalleryButton = (Button) findViewById(R.id.from_gallery);
 		Button blankCanvasButton = (Button) findViewById(R.id.blank_canvas);
