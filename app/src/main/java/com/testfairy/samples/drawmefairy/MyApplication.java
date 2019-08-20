@@ -1,11 +1,9 @@
 package com.testfairy.samples.drawmefairy;
 
 import android.app.Application;
-import android.content.SharedPreferences;
 
 import com.testfairy.TestFairy;
 
-import java.util.Random;
 import java.util.UUID;
 
 import utils.AnimalName;
@@ -27,7 +25,7 @@ public class MyApplication extends Application {
 
 		TestFairy.setServerEndpoint(testFairyData.getServerEndpoint());
 
-		TestFairy.setUserId(AnimalName.getAnimaEmail(this));
+		TestFairy.setUserId(AnimalName.getAnimalEmail(this));
 		TestFairy.begin(this, testFairyData.getAppToken());
 		TestFairy.hideView(R.id.hidden);
 

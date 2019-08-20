@@ -43,16 +43,8 @@ public class AnimalName {
 		return name;
 	}
 
-	public static String getAnimaEmail(Context context) {
+	public static String getAnimalEmail(Context context) {
 
-		SharedPreferences preferences = context.getSharedPreferences("user_details", MODE_PRIVATE);
-		String name = preferences.getString("name", null);
-		if (name == null) {
-			// randomize on first launch
-			name = randomizeAnimalName();
-			preferences.edit().putString("name", name).apply();
-		}
-
-		return name + "@demo.com";
+		return getAnimalName(context) + "@demo.com";
 	}
 }
