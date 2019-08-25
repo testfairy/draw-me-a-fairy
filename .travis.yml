@@ -6,6 +6,8 @@ android:
                 - build-tools-28.0.3
                 - android-28
 
+before_script:
+        - sed "s/versionName.*/versionName ${TRAVIS_TAG}/g" app/build.gradle
 script:
         - "./gradlew assembleRegularDebug"
 
