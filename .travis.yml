@@ -1,5 +1,7 @@
 language: android
 jdk: oraclejdk8
+if: tag IS present
+
 android:
         components:
                 - tools
