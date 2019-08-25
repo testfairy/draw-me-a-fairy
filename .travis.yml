@@ -9,7 +9,7 @@ android:
                 - android-28
 
 before_script:
-        - 'sed -i "s/versionName.*/versionName ${TRAVIS_TAG}/g" app/build.gradle'
+        - 'sed -i "s/versionName.*/versionName "${TRAVIS_TAG}"/g" app/build.gradle'
         - 'cat app/build.gradle'
 
 script:
