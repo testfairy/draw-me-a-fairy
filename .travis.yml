@@ -1,19 +1,19 @@
 language: android
 jdk: oraclejdk8
 android:
-  components:
-    - tools
-    - build-tools-28.0.3
-    - android-28
+        components:
+                - tools
+                - build-tools-28.0.3
+                - android-28
 
 script:
-  - "./gradlew assembleRegularDebug"
+        - "./gradlew assembleRegularDebug"
 
 deploy:
-  provider: releases
-  api_key:
-    secure: Bgwz1ODhTfQ9cSZ2xrIJWcomkEG3mCjxsCViy57zivPsGKHZrhL+bMldrLEXVq9sNz+uQ9z1tsjBDGbsP8Gscw9wviT6TwtsXIwFBMl5vGw09564WgOy5SRI1f8BZvMj4r1XPku77QbV9YwHWfiV4G0bQcDLCKfySXMIdmi6KnM=
-  file: ./app/build/outputs/apk/regular/debug/app-regular-debug.apk
-  skip_cleanup: true
-  on:
-    tags: true
+        provider: releases
+        api_key:
+                secure: DDd2LIhSAW8mLCZqjRHeiWzZuU1bjivA4nKl77KI2jXsYIPV0oxgEsoIaeNIEGRvHspJHo3ijGb8STLi1WB0eqoMIfBhXuHFGSyQxR6D+fOF3s3P6F+Xr9ZfXRJjPMYA7TIkrETLg0UJEY4rGV51jb3Bvwkm+BRStnQV0KaXPus=
+        file: ./app/build/outputs/apk/regular/debug/app-regular-debug.apk
+        skip_cleanup: true
+        on:
+                tags: true
