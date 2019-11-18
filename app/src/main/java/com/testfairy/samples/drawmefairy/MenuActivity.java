@@ -28,6 +28,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.testfairy.TestFairy;
+import com.testfairy.TestFairyFeedbackOverlay;
 
 import audio.TestFairyAudioRecord;
 import utils.AnimalName;
@@ -120,12 +121,18 @@ public class MenuActivity extends Activity {
 		Button blankCanvasButton = (Button) findViewById(R.id.blank_canvas);
 		Button aboutButton = (Button) findViewById(R.id.about_app);
 		Button crashButton = (Button) findViewById(R.id.crash_button);
+		Button installFeedbackOverlayButton = (Button) findViewById(R.id.install_feedback_overlay);
+		Button showHideFeedbackOverlayButton = (Button) findViewById(R.id.show_feedback_overlay);
 		View menuLogo = findViewById(R.id.menu_logo);
 
 		fromGalleryButton.setOnClickListener(new OnClickStartActivity(SelectPhotoActivity.class));
 		blankCanvasButton.setOnClickListener(new OnClickStartActivity(DrawingActivity.class));
 		aboutButton.setOnClickListener(new OnClickStartActivity(AboutActivity.class));
 		crashButton.setOnClickListener(new OnClickStartActivity(CrashActivity.class));
+		installFeedbackOverlayButton.setOnClickListener(new OnClickInstallFeedbackOverlay(showHideFeedbackOverlayButton));
+		showHideFeedbackOverlayButton.setOnClickListener(new OnClickShowHideFeedbackOverlay());
+		showHideFeedbackOverlayButton.setVisibility(View.GONE);
+
 		menuLogo.setOnLongClickListener(onLongClickMenuLogo);
 	}
 
@@ -342,11 +349,9 @@ public class MenuActivity extends Activity {
 	}
 
 	private class OnClickStartActivity implements View.OnClickListener {
-
 		private Class<?> clr;
 
 		private OnClickStartActivity(Class<?> clr) {
-
 			this.clr = clr;
 		}
 
@@ -354,6 +359,31 @@ public class MenuActivity extends Activity {
 		public void onClick(View v) {
 			Intent intent = new Intent(MenuActivity.this, clr);
 			startActivity(intent);
+		}
+	}
+
+	private class OnClickInstallFeedbackOverlay implements View.OnClickListener {
+		private View showHideButton;
+
+		public OnClickInstallFeedbackOverlay(View showHideButton) {
+			this.showHideButton = showHideButton;
+		}
+
+		@Override
+		public void onClick(View v) {
+			TestFairyData testFairyData = new TestFairyDataReader().read(v.getContext());
+			TestFairyFeedbackOverlay.installOverlay(v.getContext(), testFairyData.getAppToken(),true);
+
+			if (showHideButton != null) {
+				this.showHideButton.setVisibility(View.VISIBLE);
+			}
+		}
+	}
+
+	private class OnClickShowHideFeedbackOverlay implements View.OnClickListener {
+		@Override
+		public void onClick(View v) {
+			TestFairyFeedbackOverlay.toggle();
 		}
 	}
 }
