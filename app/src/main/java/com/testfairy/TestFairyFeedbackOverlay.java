@@ -346,7 +346,7 @@ public class TestFairyFeedbackOverlay {
 			}
 		}
 
-		container.setPadding(padding, 0, padding, padding);
+		container.setPadding(padding, padding, padding, padding);
 		container.setLayoutParams(containerLayoutParams);
 		container.setOrientation(LinearLayout.VERTICAL);
 		container.setBackgroundColor(context.getResources().getColor(android.R.color.transparent));
