@@ -77,6 +77,7 @@
 		/>
 
 	<Button
+		android:visibility="gone"
 		android:id="@+id/show_feedback_overlay"
 		android:layout_height="wrap_content"
 		android:layout_width="fill_parent"
@@ -94,7 +95,6 @@
 		/>
 
 	<TextView
-		android:visibility="gone"
 		android:id="@+id/hidden"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
@@ -104,11 +104,12 @@
 		android:layout_alignEnd="@+id/crash_button"
 		android:layout_alignRight="@+id/crash_button"
 		android:layout_marginBottom="16dp"
-		android:background="@android:color/holo_red_dark"
+		android:background="#1177DD"
 		android:gravity="center"
 		android:text="Your secret animal is 'Hippo'"
 		android:textColor="@android:color/white"
-		android:textSize="18sp" />
+		android:padding="3dp"
+		android:textSize="14sp" />
 
 	<Button
 		android:id="@+id/crash_button"

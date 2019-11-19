@@ -27,10 +27,9 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import com.testfairy.TestFairy;
 import com.testfairy.TestFairyFeedbackOverlay;
-import com.testfairy.samples.drawmefairy.BuildConfig;
-import com.testfairy.samples.drawmefairy.R;
 
 import audio.TestFairyAudioRecord;
 import utils.AnimalName;
@@ -386,7 +385,7 @@ public class MenuActivity extends Activity {
 					TestFairyFeedbackOverlay.installOverlay(v.getContext(), testFairyData.getAppToken(), purpose, true);
 
 					if (showHideButton != null) {
-						showHideButton.setVisibility(View.VISIBLE);
+//						showHideButton.setVisibility(View.VISIBLE);
 					}
 				}
 			});

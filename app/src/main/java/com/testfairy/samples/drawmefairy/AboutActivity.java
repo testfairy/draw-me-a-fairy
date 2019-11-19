@@ -10,8 +10,6 @@ import android.view.animation.LinearInterpolator;
 import android.view.animation.RotateAnimation;
 import android.widget.ImageView;
 
-import com.testfairy.samples.drawmefairy.R;
-
 import utils.ActivityTime;
 
 public class AboutActivity extends Activity {

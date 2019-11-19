@@ -4,8 +4,6 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
 
-import com.testfairy.samples.drawmefairy.R;
-
 public class SecretActivity extends Activity {
 	private final String TAG = getClass().getSimpleName();
 

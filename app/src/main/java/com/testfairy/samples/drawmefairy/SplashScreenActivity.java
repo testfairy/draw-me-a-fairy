@@ -9,8 +9,6 @@ import android.view.animation.LinearInterpolator;
 import android.view.animation.RotateAnimation;
 import android.widget.ImageView;
 
-import com.testfairy.samples.drawmefairy.R;
-
 public class SplashScreenActivity extends Activity {
 
 	private final String TAG = getClass().getSimpleName();
