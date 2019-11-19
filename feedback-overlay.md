@@ -19,50 +19,50 @@ TestFairyFeedbackOverlay.installOverlay(context, "APP_TOKEN", OverlayPurpose.VID
 ## API
 
 ```java
-    /**
-	 * Call this before everything else to install a human friendly overlay UI
-	 * for sending feedbacks to TestFairy.
-	 *
-	 * @param context Application context or an Activity, must not be null.
-	 * @param appToken Your TestFairy app token.
-	 * @param showImmediately Set it to true of you want to show the overlay after installation completes.
-	 */
-	void installOverlay(Context context, String appToken, OverlayPurpose overlayPurpose, boolean showImmediately);
+/**
+* Call this before everything else to install a human friendly overlay UI
+* for sending feedbacks to TestFairy.
+*
+* @param context Application context or an Activity, must not be null.
+* @param appToken Your TestFairy app token.
+* @param showImmediately Set it to true of you want to show the overlay after installation completes.
+*/
+void installOverlay(Context context, String appToken, OverlayPurpose overlayPurpose, boolean showImmediately);
 
-	/**
-	 * Call this if you no longer need the overlay during your app's lifetime.
-	 */
-	void uninstallOverlay();
+/**
+* Call this if you no longer need the overlay during your app's lifetime.
+*/
+void uninstallOverlay();
 
-	/**
-	 * Toggles overlay visibility with animation if installed.
-	 */
-	void toggle();
+/**
+* Toggles overlay visibility with animation if installed.
+*/
+void toggle();
 
-	/**
-	 * Toggles overlay visibility if installed.
-	 */
-	void toggle(boolean animated);
+/**
+* Toggles overlay visibility if installed.
+*/
+void toggle(boolean animated);
 
-	/**
-	 * Shows overlay with animation if installed.
-	 */
-	void show();
+/**
+* Shows overlay with animation if installed.
+*/
+void show();
 
-	/**
-	 * Shows overlay if installed.
-	 * @param animated Whether to run an animation.
-	 */
-	void show(boolean animated);
+/**
+* Shows overlay if installed.
+* @param animated Whether to run an animation.
+*/
+void show(boolean animated);
 
-	/**
-	 * Hides overlay with animation if installed.
-	 */
-	void hide();
+/**
+* Hides overlay with animation if installed.
+*/
+void hide();
 
-	/**
-	 * Hides overlay if installed.
-	 * @param animated Whether to run an animation.
-	 */
-	void hide(boolean animated);
+/**
+* Hides overlay if installed.
+* @param animated Whether to run an animation.
+*/
+void hide(boolean animated);
 ```
