@@ -2,7 +2,7 @@
 
 ## Installation
 
-1. Copy [this](https://github.com/testfairy/draw-me-a-fairy/blob/e89acbd9c5107e02220701a4287195b9d0c8acc0/app/src/main/java/com/testfairy/TestFairyFeedbackOverlay.java) file into your project under a package named `com.testfairy`.
+1. Copy [this](https://github.com/testfairy/draw-me-a-fairy/blob/31ce8aac17b46e96eab732eebf21090f744fa986/app/src/main/java/com/testfairy/TestFairyFeedbackOverlay.java) file into your project under a package named `com.testfairy`.
 2. Install overlay with the following code.
 
 ```java
