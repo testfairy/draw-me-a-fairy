@@ -35,6 +35,7 @@ import okhttp3.Response;
 import utils.ActivityTime;
 
 import com.testfairy.TestFairy;
+import com.testfairy.samples.drawmefairy.R;
 
 import java.io.*;
 import java.util.ArrayList;

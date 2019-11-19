@@ -20,6 +20,9 @@
 	<string name="open_from_gallery_content_description">Open from gallery</string>
 	<string name="open_blank_canvas_content_description">Open blank canvas</string>
 	<string name="about_app_content_description">About app</string>
+	<string name="install_screenshot_overlay_description">Take a Screenshot</string>
+	<string name="install_video_overlay_description">Start Recording Video</string>
+	<string name="show_feedback_overlay_description">Show/Hide Overlay</string>
 	<string name="crash_app_button_content_description">Crash app button</string>
 	<string name="painter_picker_button_content_description">Painter picker button</string>
 	<string name="erase_picker_button_content_description">Erase picker button</string>

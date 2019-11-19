@@ -29,6 +29,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 import com.testfairy.TestFairy;
 import com.testfairy.TestFairyFeedbackOverlay;
+import com.testfairy.samples.drawmefairy.BuildConfig;
+import com.testfairy.samples.drawmefairy.R;
 
 import audio.TestFairyAudioRecord;
 import utils.AnimalName;
@@ -117,19 +119,21 @@ public class MenuActivity extends Activity {
 		((TextView)findViewById(R.id.hidden)).setText("Your secret animal is ("+ AnimalName.getAnimalName(this) +")");
 		((TextView)findViewById(R.id.version)).setText("Version: " + BuildConfig.VERSION_CODE + " - " + BuildConfig.VERSION_NAME);
 
-		Button fromGalleryButton = (Button) findViewById(R.id.from_gallery);
-		Button blankCanvasButton = (Button) findViewById(R.id.blank_canvas);
-		Button aboutButton = (Button) findViewById(R.id.about_app);
-		Button crashButton = (Button) findViewById(R.id.crash_button);
-		Button installFeedbackOverlayButton = (Button) findViewById(R.id.install_feedback_overlay);
-		Button showHideFeedbackOverlayButton = (Button) findViewById(R.id.show_feedback_overlay);
+		Button fromGalleryButton = findViewById(R.id.from_gallery);
+		Button blankCanvasButton = findViewById(R.id.blank_canvas);
+		Button aboutButton = findViewById(R.id.about_app);
+		Button crashButton = findViewById(R.id.crash_button);
+		Button installScreenshotOverlayButton = findViewById(R.id.install_screenshot_overlay);
+		Button installVideoOverlayButton = findViewById(R.id.install_video_overlay);
+		Button showHideFeedbackOverlayButton = findViewById(R.id.show_feedback_overlay);
 		View menuLogo = findViewById(R.id.menu_logo);
 
 		fromGalleryButton.setOnClickListener(new OnClickStartActivity(SelectPhotoActivity.class));
 		blankCanvasButton.setOnClickListener(new OnClickStartActivity(DrawingActivity.class));
 		aboutButton.setOnClickListener(new OnClickStartActivity(AboutActivity.class));
 		crashButton.setOnClickListener(new OnClickStartActivity(CrashActivity.class));
-		installFeedbackOverlayButton.setOnClickListener(new OnClickInstallFeedbackOverlay(showHideFeedbackOverlayButton));
+		installScreenshotOverlayButton.setOnClickListener(new OnClickInstallFeedbackOverlay(showHideFeedbackOverlayButton, TestFairyFeedbackOverlay.OverlayPurpose.SCREENSHOT));
+		installVideoOverlayButton.setOnClickListener(new OnClickInstallFeedbackOverlay(showHideFeedbackOverlayButton, TestFairyFeedbackOverlay.OverlayPurpose.VIDEO));
 		showHideFeedbackOverlayButton.setOnClickListener(new OnClickShowHideFeedbackOverlay());
 		showHideFeedbackOverlayButton.setVisibility(View.GONE);
 
@@ -363,20 +367,29 @@ public class MenuActivity extends Activity {
 	}
 
 	private class OnClickInstallFeedbackOverlay implements View.OnClickListener {
-		private View showHideButton;
+		private final View showHideButton;
+		private final TestFairyFeedbackOverlay.OverlayPurpose purpose;
 
-		public OnClickInstallFeedbackOverlay(View showHideButton) {
+		public OnClickInstallFeedbackOverlay(View showHideButton, TestFairyFeedbackOverlay.OverlayPurpose purpose) {
 			this.showHideButton = showHideButton;
+			this.purpose = purpose;
 		}
 
 		@Override
-		public void onClick(View v) {
-			TestFairyData testFairyData = new TestFairyDataReader().read(v.getContext());
-			TestFairyFeedbackOverlay.installOverlay(v.getContext(), testFairyData.getAppToken(),true);
+		public void onClick(final View v) {
+			TestFairyFeedbackOverlay.uninstallOverlay();
 
-			if (showHideButton != null) {
-				this.showHideButton.setVisibility(View.VISIBLE);
-			}
+			v.post(new Runnable() {
+				@Override
+				public void run() {
+					TestFairyData testFairyData = new TestFairyDataReader().read(v.getContext());
+					TestFairyFeedbackOverlay.installOverlay(v.getContext(), testFairyData.getAppToken(), purpose, true);
+
+					if (showHideButton != null) {
+						showHideButton.setVisibility(View.VISIBLE);
+					}
+				}
+			});
 		}
 	}
 
