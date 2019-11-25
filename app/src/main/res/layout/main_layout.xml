@@ -42,57 +42,51 @@
 		android:contentDescription="@string/about_app_content_description"
 		/>
 
-	<Button
-		android:id="@+id/install_screenshot_overlay"
-		android:layout_height="wrap_content"
-		android:layout_width="fill_parent"
+	<LinearLayout
 		android:layout_marginTop="20dp"
-		android:layout_marginLeft="3dp"
-		android:layout_marginRight="3dp"
-		android:layout_marginBottom="5dp"
-		android:paddingLeft="8dp"
-		android:text="Take a Screenshot"
+		android:weightSum="2"
+		android:id="@+id/overlay_buttons"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
 		android:layout_below="@id/about_app"
-		android:background="#3355CC"
-		android:textColor="#FFFFFF"
-		android:drawableLeft="@android:drawable/ic_menu_camera"
-		android:contentDescription="@string/install_screenshot_overlay_description"
-		/>
+		android:orientation="horizontal">
 
-	<Button
-		android:id="@+id/install_video_overlay"
-		android:layout_height="wrap_content"
-		android:layout_width="fill_parent"
-		android:layout_marginTop="3dp"
-		android:layout_marginLeft="3dp"
-		android:layout_marginRight="3dp"
-		android:layout_marginBottom="5dp"
-		android:paddingLeft="8dp"
-		android:text="Start Recording Video"
-		android:layout_below="@id/install_screenshot_overlay"
-		android:background="#3355CC"
-		android:textColor="#FFFFFF"
-		android:drawableLeft="@android:drawable/ic_menu_slideshow"
-		android:contentDescription="@string/install_video_overlay_description"
-		/>
+		<Button
+			android:layout_weight="1"
+			android:id="@+id/install_screenshot_overlay"
+			android:layout_height="wrap_content"
+			android:layout_width="match_parent"
+			android:layout_marginTop="3dp"
+			android:layout_marginLeft="3dp"
+			android:layout_marginRight="3dp"
+			android:layout_marginBottom="5dp"
+			android:paddingLeft="8dp"
+			android:text="Take a Screenshot"
+			android:background="#3355CC"
+			android:textColor="#FFFFFF"
+			android:textSize="10sp"
+			android:drawableLeft="@android:drawable/ic_menu_camera"
+			android:contentDescription="@string/install_screenshot_overlay_description"
+			/>
 
-	<Button
-		android:visibility="gone"
-		android:id="@+id/show_feedback_overlay"
-		android:layout_height="wrap_content"
-		android:layout_width="fill_parent"
-		android:layout_marginTop="3dp"
-		android:layout_marginLeft="3dp"
-		android:layout_marginRight="3dp"
-		android:layout_marginBottom="5dp"
-		android:paddingLeft="8dp"
-		android:text="Show/Hide Overlay"
-		android:layout_below="@id/install_video_overlay"
-		android:background="#3355CC"
-		android:textColor="#FFFFFF"
-		android:drawableLeft="@android:drawable/ic_menu_view"
-		android:contentDescription="@string/show_feedback_overlay_description"
-		/>
+		<Button
+			android:layout_weight="1"
+			android:id="@+id/install_video_overlay"
+			android:layout_height="wrap_content"
+			android:layout_width="match_parent"
+			android:layout_marginTop="3dp"
+			android:layout_marginLeft="3dp"
+			android:layout_marginRight="3dp"
+			android:layout_marginBottom="5dp"
+			android:paddingLeft="8dp"
+			android:text="Start Recording Video"
+			android:background="#3355CC"
+			android:textColor="#FFFFFF"
+			android:textSize="10sp"
+			android:drawableLeft="@android:drawable/ic_menu_slideshow"
+			android:contentDescription="@string/install_video_overlay_description"
+			/>
+	</LinearLayout>
 
 	<TextView
 		android:id="@+id/hidden"
@@ -104,7 +98,7 @@
 		android:layout_alignEnd="@+id/crash_button"
 		android:layout_alignRight="@+id/crash_button"
 		android:layout_marginBottom="16dp"
-		android:background="#1177DD"
+		android:background="@android:color/transparent"
 		android:gravity="center"
 		android:text="Your secret animal is 'Hippo'"
 		android:textColor="@android:color/white"

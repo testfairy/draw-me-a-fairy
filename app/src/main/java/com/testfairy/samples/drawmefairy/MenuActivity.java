@@ -124,17 +124,14 @@ public class MenuActivity extends Activity {
 		Button crashButton = findViewById(R.id.crash_button);
 		Button installScreenshotOverlayButton = findViewById(R.id.install_screenshot_overlay);
 		Button installVideoOverlayButton = findViewById(R.id.install_video_overlay);
-		Button showHideFeedbackOverlayButton = findViewById(R.id.show_feedback_overlay);
 		View menuLogo = findViewById(R.id.menu_logo);
 
 		fromGalleryButton.setOnClickListener(new OnClickStartActivity(SelectPhotoActivity.class));
 		blankCanvasButton.setOnClickListener(new OnClickStartActivity(DrawingActivity.class));
 		aboutButton.setOnClickListener(new OnClickStartActivity(AboutActivity.class));
 		crashButton.setOnClickListener(new OnClickStartActivity(CrashActivity.class));
-		installScreenshotOverlayButton.setOnClickListener(new OnClickInstallFeedbackOverlay(showHideFeedbackOverlayButton, TestFairyFeedbackOverlay.OverlayPurpose.SCREENSHOT));
-		installVideoOverlayButton.setOnClickListener(new OnClickInstallFeedbackOverlay(showHideFeedbackOverlayButton, TestFairyFeedbackOverlay.OverlayPurpose.VIDEO));
-		showHideFeedbackOverlayButton.setOnClickListener(new OnClickShowHideFeedbackOverlay());
-		showHideFeedbackOverlayButton.setVisibility(View.GONE);
+		installScreenshotOverlayButton.setOnClickListener(new OnClickInstallFeedbackOverlay(TestFairyFeedbackOverlay.OverlayPurpose.SCREENSHOT));
+		installVideoOverlayButton.setOnClickListener(new OnClickInstallFeedbackOverlay(TestFairyFeedbackOverlay.OverlayPurpose.VIDEO));
 
 		menuLogo.setOnLongClickListener(onLongClickMenuLogo);
 	}
@@ -366,11 +363,9 @@ public class MenuActivity extends Activity {
 	}
 
 	private class OnClickInstallFeedbackOverlay implements View.OnClickListener {
-		private final View showHideButton;
 		private final TestFairyFeedbackOverlay.OverlayPurpose purpose;
 
-		public OnClickInstallFeedbackOverlay(View showHideButton, TestFairyFeedbackOverlay.OverlayPurpose purpose) {
-			this.showHideButton = showHideButton;
+		public OnClickInstallFeedbackOverlay(TestFairyFeedbackOverlay.OverlayPurpose purpose) {
 			this.purpose = purpose;
 		}
 
@@ -382,20 +377,9 @@ public class MenuActivity extends Activity {
 				@Override
 				public void run() {
 					TestFairyData testFairyData = new TestFairyDataReader().read(v.getContext());
-					TestFairyFeedbackOverlay.installOverlay(v.getContext(), testFairyData.getAppToken(), purpose, true);
-
-					if (showHideButton != null) {
-//						showHideButton.setVisibility(View.VISIBLE);
-					}
+					TestFairyFeedbackOverlay.installOverlay(MenuActivity.this, testFairyData.getAppToken(), purpose);
 				}
 			});
-		}
-	}
-
-	private class OnClickShowHideFeedbackOverlay implements View.OnClickListener {
-		@Override
-		public void onClick(View v) {
-			TestFairyFeedbackOverlay.toggle();
 		}
 	}
 }
