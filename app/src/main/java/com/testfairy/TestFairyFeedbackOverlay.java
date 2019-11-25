@@ -408,7 +408,7 @@ public class TestFairyFeedbackOverlay {
 	static private final int OVERLAY_GRAVITY = Gravity.CENTER_HORIZONTAL | Gravity.BOTTOM;
 	static private final long RECORD_ANIMATION_FREQUENCY = 1000;
 	static private final String RECORD_DIALOG_TITLE = "Exposing sensitive info during recording!";
-	static private final String RECORD_DIALOG_MESSAGE = "While recording, monday can capture any sensitive information that is displayed on your screen or played from your device, including sensitive information such as audio, passwords, payment info, photos and messages.";
+	static private final String RECORD_DIALOG_MESSAGE = "While recording, the app can capture any sensitive information that is displayed on your screen or played from your device, including sensitive information such as audio, passwords, payment info, photos and messages.";
 	static private final String RECORD_DIALOG_OK_BUTTON = "Start Now";
 	static private final String RECORD_DIALOG_CANCEL_BUTTON = "Cancel";
 	static private final String VIDEO_OVERLAY_EVENT = "User requested video";
