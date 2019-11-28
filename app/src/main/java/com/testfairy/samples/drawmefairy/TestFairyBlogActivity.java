@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.webkit.WebView;
 
+import com.testfairy.samples.drawmefairy.R;
+
 import utils.ActivityTime;
 
 public class TestFairyBlogActivity extends Activity {

@@ -26,6 +26,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.testfairy.TestFairy;
+import com.testfairy.samples.drawmefairy.R;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;

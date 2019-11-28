@@ -30,6 +30,8 @@ import android.widget.Toast;
 
 import com.testfairy.TestFairy;
 import com.testfairy.TestFairyFeedbackOverlay;
+import com.testfairy.samples.drawmefairy.BuildConfig;
+import com.testfairy.samples.drawmefairy.R;
 
 import audio.TestFairyAudioRecord;
 import utils.AnimalName;

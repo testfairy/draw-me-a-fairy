@@ -3,6 +3,7 @@ package com.testfairy.samples.drawmefairy;
 import android.app.Application;
 
 import com.testfairy.TestFairy;
+import com.testfairy.samples.drawmefairy.R;
 
 import java.util.UUID;
 

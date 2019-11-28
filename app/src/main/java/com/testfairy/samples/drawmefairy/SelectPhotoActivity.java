@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.testfairy.TestFairy;
+import com.testfairy.samples.drawmefairy.R;
 
 import java.lang.reflect.Field;
 

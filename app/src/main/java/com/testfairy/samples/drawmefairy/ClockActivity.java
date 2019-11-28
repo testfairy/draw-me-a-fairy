@@ -8,6 +8,8 @@ import android.view.animation.LinearInterpolator;
 import android.view.animation.RotateAnimation;
 import android.widget.ImageView;
 
+import com.testfairy.samples.drawmefairy.R;
+
 import java.util.Date;
 
 public class ClockActivity extends Activity {
