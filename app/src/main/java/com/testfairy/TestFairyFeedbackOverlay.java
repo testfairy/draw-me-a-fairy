@@ -57,8 +57,13 @@ public class TestFairyFeedbackOverlay {
 	 * @param appToken Your TestFairy app token.
 	 */
 	static public void installOverlay(final Activity activity, final String appToken, final OverlayPurpose overlayPurpose) {
-		if (activity == null ) throw new AssertionError("Activity cannot be null.");
-		if (appToken == null) throw new AssertionError("TestFairy app token cannot be null.");
+		if (activity == null) {
+			throw new AssertionError("Activity cannot be null.");
+		}
+		
+		if (appToken == null) {
+			throw new AssertionError("TestFairy app token cannot be null.");
+		}
 
 		Runnable install = new Runnable() {
 			@Override
@@ -218,7 +223,7 @@ public class TestFairyFeedbackOverlay {
 				@Override
 				public void onClick(View v) {
 					uninstallOverlay();
-					TestFairy.showFeedbackForm();
+					TestFairy.showFeedbackForm(context, token, true);
 				}
 			});
 
