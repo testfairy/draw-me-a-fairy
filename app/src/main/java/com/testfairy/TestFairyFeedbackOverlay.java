@@ -41,6 +41,9 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class TestFairyFeedbackOverlay {
 
 	public enum OverlayPurpose {
@@ -203,10 +206,11 @@ public class TestFairyFeedbackOverlay {
 		roundedImageView.setLayoutParams(imageLayoutParams);
 
 		if (purpose == OverlayPurpose.VIDEO) {
-			final View containerDuringSetup = container;
-
 			if (!beginCalled) {
-				TestFairy.begin(context, token);
+				Map<String, String> options = new HashMap<>();
+				options.put("blinking-dot", "true");
+				// TODO : test blinking dot with the new sdk
+				TestFairy.begin(context, token, options);
 				beginCalled = true;
 			}
 
@@ -214,7 +218,8 @@ public class TestFairyFeedbackOverlay {
 
 			roundedImageView.setImageDrawable(new BitmapDrawable(context.getResources(), BitmapFactory.decodeByteArray(RECORDING_ICON, 0, RECORDING_ICON.length)));
 			roundedImageView.setOnClickListener(null);
-			roundedImageView.post(new ShowHideAnimationRunnable(containerDuringSetup, roundedImageView));
+			roundedImageView.setVisibility(View.GONE);
+			roundedImageView.setClickable(false);
 
 			container.addView(roundedImageView);
 		} else if (purpose == OverlayPurpose.SCREENSHOT) {
@@ -226,6 +231,7 @@ public class TestFairyFeedbackOverlay {
 					TestFairy.showFeedbackForm(context, token, true);
 				}
 			});
+			roundedImageView.setClickable(true);
 
 			container.addView(roundedImageView);
 		} else {
@@ -239,6 +245,7 @@ public class TestFairyFeedbackOverlay {
 		container.setBackgroundColor(context.getResources().getColor(android.R.color.transparent));
 		container.setDividerPadding(0);
 		container.setShowDividers(LinearLayout.SHOW_DIVIDER_NONE);
+		container.setClickable(false);
 		root.addView(container);
 
 		if (purpose == OverlayPurpose.SCREENSHOT) {
@@ -253,17 +260,20 @@ public class TestFairyFeedbackOverlay {
 		Log.d(TAG, "Removing overlay");
 
 		if (container != null) {
+			final LinearLayout finalContainer = container;
 			Runnable remove = new Runnable() {
 				@Override
 				public void run() {
-					container.removeAllViews();
-					ViewParent parent = container.getParent();
+					finalContainer.removeAllViews();
+					ViewParent parent = finalContainer.getParent();
 					if (parent instanceof ViewGroup) {
 						ViewGroup castedParent = (ViewGroup) parent;
-						castedParent.removeView(container);
+						castedParent.removeView(finalContainer);
 					}
 
-					container = null;
+					if (container == finalContainer) {
+						container = null;
+					}
 				}
 			};
 
@@ -372,36 +382,6 @@ public class TestFairyFeedbackOverlay {
 		}
 
 		return new AlertDialog.Builder(new ContextThemeWrapper(context, android.R.style.Theme_Dialog));
-	}
-
-	static private class ShowHideAnimationRunnable implements Runnable {
-		private final View view;
-		private final View container;
-		private boolean showing = false;
-
-		public ShowHideAnimationRunnable(View container, View view) {
-			this.view = view;
-			this.container = container;
-		}
-
-		@Override
-		public void run() {
-			if (
-					view != null &&
-					container != null &&
-					TestFairyFeedbackOverlay.instance != null &&
-					container == TestFairyFeedbackOverlay.instance.container
-			) {
-				if (showing) {
-					view.setVisibility(View.INVISIBLE);
-				} else {
-					view.setVisibility(View.VISIBLE);
-				}
-
-				view.postDelayed(this, RECORD_ANIMATION_FREQUENCY);
-				showing = !showing;
-			}
-		}
 	}
 
 	/***************** UI Setup *****************/
