@@ -24,5 +24,16 @@
 		android:textSize="@dimen/about_text_size"
 		/>
 
+	<Button
+		android:id="@+id/send_feedback_button"
+		android:layout_height="wrap_content"
+		android:layout_width="fill_parent"
+		android:layout_marginTop="20dp"
+		android:text="Send Feedback"
+		android:layout_below="@id/about_text"
+		android:drawableLeft="@android:drawable/ic_menu_info_details"
+		android:contentDescription="@string/about_app_content_description"
+		/>
+
 
 </RelativeLayout>

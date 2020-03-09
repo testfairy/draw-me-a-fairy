@@ -3,6 +3,7 @@ package com.testfairy.samples.drawmefairy;
 import android.app.Application;
 
 import com.testfairy.TestFairy;
+import com.testfairy.samples.drawmefairy.R;
 
 import java.util.UUID;
 
@@ -24,7 +25,6 @@ public class MyApplication extends Application {
 		TestFairyData testFairyData = new TestFairyDataReader().read(this);
 
 		TestFairy.setServerEndpoint(testFairyData.getServerEndpoint());
-
 		TestFairy.setUserId(AnimalName.getAnimalEmail(this));
 		TestFairy.begin(this, testFairyData.getAppToken());
 		TestFairy.hideView(R.id.hidden);
