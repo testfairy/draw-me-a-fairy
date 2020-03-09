@@ -29,7 +29,7 @@ android {
 
         audio {
             dimension "features"
-            applicationId "com.drawmeafairy.audio"
+            applicationId "com.testfairy.samples.drawmefairy.audio"
         }
     }
 }

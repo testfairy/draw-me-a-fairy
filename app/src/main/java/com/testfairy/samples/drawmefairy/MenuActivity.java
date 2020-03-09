@@ -29,9 +29,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.testfairy.TestFairy;
-import com.testfairy.TestFairyFeedbackOverlay;
-import com.testfairy.samples.drawmefairy.BuildConfig;
-import com.testfairy.samples.drawmefairy.R;
 
 import audio.TestFairyAudioRecord;
 import utils.AnimalName;
@@ -124,16 +121,12 @@ public class MenuActivity extends Activity {
 		Button blankCanvasButton = findViewById(R.id.blank_canvas);
 		Button aboutButton = findViewById(R.id.about_app);
 		Button crashButton = findViewById(R.id.crash_button);
-		Button installScreenshotOverlayButton = findViewById(R.id.install_screenshot_overlay);
-		Button installVideoOverlayButton = findViewById(R.id.install_video_overlay);
 		View menuLogo = findViewById(R.id.menu_logo);
 
 		fromGalleryButton.setOnClickListener(new OnClickStartActivity(SelectPhotoActivity.class));
 		blankCanvasButton.setOnClickListener(new OnClickStartActivity(DrawingActivity.class));
 		aboutButton.setOnClickListener(new OnClickStartActivity(AboutActivity.class));
 		crashButton.setOnClickListener(new OnClickStartActivity(CrashActivity.class));
-		installScreenshotOverlayButton.setOnClickListener(new OnClickInstallFeedbackOverlay(TestFairyFeedbackOverlay.OverlayPurpose.SCREENSHOT));
-		installVideoOverlayButton.setOnClickListener(new OnClickInstallFeedbackOverlay(TestFairyFeedbackOverlay.OverlayPurpose.VIDEO));
 
 		menuLogo.setOnLongClickListener(onLongClickMenuLogo);
 	}
@@ -361,27 +354,6 @@ public class MenuActivity extends Activity {
 		public void onClick(View v) {
 			Intent intent = new Intent(MenuActivity.this, clr);
 			startActivity(intent);
-		}
-	}
-
-	private class OnClickInstallFeedbackOverlay implements View.OnClickListener {
-		private final TestFairyFeedbackOverlay.OverlayPurpose purpose;
-
-		public OnClickInstallFeedbackOverlay(TestFairyFeedbackOverlay.OverlayPurpose purpose) {
-			this.purpose = purpose;
-		}
-
-		@Override
-		public void onClick(final View v) {
-			TestFairyFeedbackOverlay.uninstallOverlay();
-
-			v.post(new Runnable() {
-				@Override
-				public void run() {
-					TestFairyData testFairyData = new TestFairyDataReader().read(v.getContext());
-					TestFairyFeedbackOverlay.installOverlay(MenuActivity.this, testFairyData.getAppToken(), purpose);
-				}
-			});
 		}
 	}
 }
