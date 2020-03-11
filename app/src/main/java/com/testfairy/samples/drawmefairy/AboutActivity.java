@@ -8,7 +8,12 @@ import android.view.Window;
 import android.view.animation.Animation;
 import android.view.animation.LinearInterpolator;
 import android.view.animation.RotateAnimation;
+import android.widget.Button;
 import android.widget.ImageView;
+
+import com.testfairy.TestFairy;
+import com.testfairy.samples.drawmefairy.R;
+
 import utils.ActivityTime;
 
 public class AboutActivity extends Activity {
@@ -25,8 +30,20 @@ public class AboutActivity extends Activity {
 
 		// hide title bar
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
-
 		setContentView(R.layout.about);
+
+		Button sendFeedbackButton = (Button) findViewById(R.id.send_feedback_button);
+
+		sendFeedbackButton.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				TestFairy.stop();
+				TestFairyData testFairyData = new TestFairyDataReader().read(AboutActivity.this.getApplicationContext());
+				TestFairy.showFeedbackForm(AboutActivity.this, testFairyData.getAppToken(), false);
+				finish();
+			}
+		});
+
 		ImageView image = (ImageView) findViewById(R.id.about_image);
 
 		RotateAnimation anim = new RotateAnimation(0f, 359f, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);

@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/testfairy/draw-me-a-fairy.svg?branch=master)](https://travis-ci.org/testfairy/draw-me-a-fairy)
 
-*Draw Me A Fairy* is a sample application using TestFairy SDK.
+*Draw Me A Fairy* is a sample application which showcases various TestFairy SDK features.
 
 ![Screenshot](docs/draw-me-something-front.jpg)
 
@@ -11,6 +11,7 @@ With this sample application, we show how to use features of the platform, inclu
 - Initializing the SDK ([src](https://github.com/testfairy/draw-me-a-fairy/blob/master/app/src/main/java/com/testfairy/samples/drawmefairy/MyApplication.java#L58))
 - Recording videos of app use
 - Identifying users, for future searches ([src](https://github.com/testfairy/draw-me-a-fairy/blob/master/app/src/main/java/com/testfairy/samples/drawmefairy/MyApplication.java#L57))
+- Getting user feedback with attached screen recordings ([src](https://github.com/testfairy/draw-me-a-fairy/blob/master/app/src/main/java/com/testfairy/samples/drawmefairy/AboutActivity.java#L42))
 - Capturing logs, and sending them to TestFairy
 - Remote Logging (logs not written to logcat, but are sent to TestFairy) ([src](https://github.com/testfairy/draw-me-a-fairy/blob/master/app/src/main/java/com/testfairy/samples/drawmefairy/MyApplication.java#L61))
 - Adding events after specific user interactions ([src](https://github.com/testfairy/draw-me-a-fairy/blob/master/app/src/main/java/com/testfairy/samples/drawmefairy/DrawingActivity.java#L245))
@@ -29,7 +30,7 @@ See https://app.testfairy.com/settings/ for more information.
 
 ## How to build
 
-*Draw Me A Fairy* comes with 2 product flavors. One flavors support audio recordings during the app is foreground. The other flavor disables audio entirely.
+*Draw Me A Fairy* comes with 2 product flavors. One flavor supports audio recordings while the app is foreground. The other disables audio entirely.
 
 If you want to build the version without the audio, run the command below in project directory to create the apk.
 ```bash

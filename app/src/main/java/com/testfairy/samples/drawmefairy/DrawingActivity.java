@@ -25,6 +25,17 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.testfairy.TestFairy;
+import com.testfairy.samples.drawmefairy.R;
+
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Random;
+
 import colorpicker.ColorPickerDialog;
 import colorpicker.ColorPickerDialog.OnColorSelectedListener;
 import okhttp3.Call;
@@ -33,12 +44,6 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 import utils.ActivityTime;
-
-import com.testfairy.TestFairy;
-
-import java.io.*;
-import java.util.ArrayList;
-import java.util.Random;
 
 import static android.graphics.Bitmap.CompressFormat;
 import static android.graphics.Bitmap.Config;

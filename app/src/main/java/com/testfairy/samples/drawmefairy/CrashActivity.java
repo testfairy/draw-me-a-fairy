@@ -6,6 +6,8 @@ import android.os.CountDownTimer;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.testfairy.samples.drawmefairy.R;
+
 public class CrashActivity extends Activity {
 
 	private final long startTime = 5 * 1000;

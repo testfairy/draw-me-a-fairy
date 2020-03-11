@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-
 		android:layout_width="fill_parent"
 		android:layout_height="fill_parent"
 		android:background="@drawable/menu_background">
@@ -43,6 +42,53 @@
 		android:contentDescription="@string/about_app_content_description"
 		/>
 
+	<LinearLayout
+		android:visibility="gone"
+		android:layout_marginTop="20dp"
+		android:weightSum="2"
+		android:id="@+id/overlay_buttons"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_below="@id/about_app"
+		android:orientation="horizontal">
+
+		<Button
+			android:layout_weight="1"
+			android:id="@+id/install_screenshot_overlay"
+			android:layout_height="wrap_content"
+			android:layout_width="match_parent"
+			android:layout_marginTop="3dp"
+			android:layout_marginLeft="3dp"
+			android:layout_marginRight="3dp"
+			android:layout_marginBottom="5dp"
+			android:paddingLeft="8dp"
+			android:text="Take a Screenshot"
+			android:background="#3355CC"
+			android:textColor="#FFFFFF"
+			android:textSize="10sp"
+			android:drawableLeft="@android:drawable/ic_menu_camera"
+			android:contentDescription="@string/install_screenshot_overlay_description"
+			/>
+
+		<Button
+			android:layout_weight="1"
+			android:id="@+id/install_video_overlay"
+			android:layout_height="wrap_content"
+			android:layout_width="match_parent"
+			android:layout_marginTop="3dp"
+			android:layout_marginLeft="3dp"
+			android:layout_marginRight="3dp"
+			android:layout_marginBottom="5dp"
+			android:paddingLeft="8dp"
+			android:text="Record Video"
+			android:background="#3355CC"
+			android:textColor="#FFFFFF"
+			android:textSize="10sp"
+			android:drawableLeft="@android:drawable/ic_menu_slideshow"
+			android:contentDescription="@string/install_video_overlay_description"
+			/>
+	</LinearLayout>
+
 	<TextView
 		android:id="@+id/hidden"
 		android:layout_width="match_parent"
@@ -53,11 +99,12 @@
 		android:layout_alignEnd="@+id/crash_button"
 		android:layout_alignRight="@+id/crash_button"
 		android:layout_marginBottom="16dp"
-		android:background="@android:color/holo_red_dark"
+		android:background="@android:color/transparent"
 		android:gravity="center"
 		android:text="Your secret animal is 'Hippo'"
 		android:textColor="@android:color/white"
-		android:textSize="18sp" />
+		android:padding="3dp"
+		android:textSize="14sp" />
 
 	<Button
 		android:id="@+id/crash_button"

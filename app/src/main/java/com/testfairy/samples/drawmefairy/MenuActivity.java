@@ -27,6 +27,7 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import com.testfairy.TestFairy;
 
 import audio.TestFairyAudioRecord;
@@ -116,16 +117,17 @@ public class MenuActivity extends Activity {
 		((TextView)findViewById(R.id.hidden)).setText("Your secret animal is ("+ AnimalName.getAnimalName(this) +")");
 		((TextView)findViewById(R.id.version)).setText("Version: " + BuildConfig.VERSION_CODE + " - " + BuildConfig.VERSION_NAME);
 
-		Button fromGalleryButton = (Button) findViewById(R.id.from_gallery);
-		Button blankCanvasButton = (Button) findViewById(R.id.blank_canvas);
-		Button aboutButton = (Button) findViewById(R.id.about_app);
-		Button crashButton = (Button) findViewById(R.id.crash_button);
+		Button fromGalleryButton = findViewById(R.id.from_gallery);
+		Button blankCanvasButton = findViewById(R.id.blank_canvas);
+		Button aboutButton = findViewById(R.id.about_app);
+		Button crashButton = findViewById(R.id.crash_button);
 		View menuLogo = findViewById(R.id.menu_logo);
 
 		fromGalleryButton.setOnClickListener(new OnClickStartActivity(SelectPhotoActivity.class));
 		blankCanvasButton.setOnClickListener(new OnClickStartActivity(DrawingActivity.class));
 		aboutButton.setOnClickListener(new OnClickStartActivity(AboutActivity.class));
 		crashButton.setOnClickListener(new OnClickStartActivity(CrashActivity.class));
+
 		menuLogo.setOnLongClickListener(onLongClickMenuLogo);
 	}
 
@@ -342,11 +344,9 @@ public class MenuActivity extends Activity {
 	}
 
 	private class OnClickStartActivity implements View.OnClickListener {
-
 		private Class<?> clr;
 
 		private OnClickStartActivity(Class<?> clr) {
-
 			this.clr = clr;
 		}
 
