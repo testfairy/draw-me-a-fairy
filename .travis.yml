@@ -3,23 +3,24 @@ jdk: oraclejdk8
 if: tag IS present
 
 android:
-        components:
-                - tools
-                - build-tools-28.0.3
-                - android-28
+  components:
+  - tools
+  - build-tools-28.0.3
+  - android-28
 
 before_script:
-        - 'sed -i "s/versionName.*/versionName \"${TRAVIS_TAG}\"/g" app/build.gradle'
-        - 'cat app/build.gradle'
+  - sed -i "s/versionName.*/versionName \"${TRAVIS_TAG}\"/g" app/build.gradle
+  - cat app/build.gradle
 
 script:
-        - "./gradlew assembleRegularDebug"
+  - ./gradlew assembleRegularDebug
 
 deploy:
-        provider: releases
-        api_key:
-                secure: DDd2LIhSAW8mLCZqjRHeiWzZuU1bjivA4nKl77KI2jXsYIPV0oxgEsoIaeNIEGRvHspJHo3ijGb8STLi1WB0eqoMIfBhXuHFGSyQxR6D+fOF3s3P6F+Xr9ZfXRJjPMYA7TIkrETLg0UJEY4rGV51jb3Bvwkm+BRStnQV0KaXPus=
-        file: ./app/build/outputs/apk/regular/debug/app-regular-debug.apk
-        skip_cleanup: true
-        on:
-                tags: true
+  provider: releases
+  api_key:
+    secure: lGl1gxfnjoJfn1FduLWkh/0bgfOfIEA3au1oq6d1Fs1MMLei/PkQkkwZOaCmitGrwuznls4/zzsTQbJ/QfbmCN4SPGEMaeAnJYvIDcTqdHyPQ0p6fgnFxhduKTHTY1gWOFukm5NEiGsKQ7EZn0xFoHu2gwsy2DAh+A/YW/J+JAk=
+  file: "./app/build/outputs/apk/regular/debug/app-regular-debug.apk"
+  skip_cleanup: true
+  on:
+    repo: testfairy/draw-me-a-fairy
+    tags: true
