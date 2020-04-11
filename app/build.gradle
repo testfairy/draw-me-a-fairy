@@ -32,6 +32,13 @@ android {
             applicationId "com.testfairy.samples.drawmefairy.audio"
         }
     }
+    
+    signingConfigs {
+        debug {
+            v1SigningEnabled true
+            v2SigningEnabled true
+        }
+    }
 }
 
 dependencies {
