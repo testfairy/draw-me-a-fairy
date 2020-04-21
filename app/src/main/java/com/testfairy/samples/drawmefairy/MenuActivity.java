@@ -31,6 +31,7 @@ import android.widget.Toast;
 import com.testfairy.TestFairy;
 
 import audio.TestFairyAudioRecord;
+
 import utils.AnimalName;
 
 public class MenuActivity extends Activity {
@@ -204,7 +205,6 @@ public class MenuActivity extends Activity {
 
 	@TargetApi(Build.VERSION_CODES.KITKAT)
 	private String getPath(final Context context, final Uri uri) {
-
 		final boolean isKitKat = Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT;
 		Log.d(TAG, "URI: " + uri);
 
@@ -324,7 +324,6 @@ public class MenuActivity extends Activity {
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-
 		Intent intent;
 		switch (item.getItemId()) {
 			case MENU_CLOCK:
