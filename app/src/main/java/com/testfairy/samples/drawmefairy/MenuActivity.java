@@ -31,6 +31,7 @@ import android.widget.Toast;
 import com.testfairy.TestFairy;
 
 import audio.TestFairyAudioRecord;
+import draw.me.fairy.BuildConfig;
 import utils.AnimalName;
 
 public class MenuActivity extends Activity {

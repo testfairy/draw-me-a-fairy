@@ -13,9 +13,9 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.testfairy.AudioSample;
 import com.testfairy.SessionStateListener;
 import com.testfairy.TestFairy;
-import com.testfairy.modules.audio.AudioSample;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
