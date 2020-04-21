@@ -5,7 +5,7 @@ android {
     buildToolsVersion '28.0.3'
 
     defaultConfig {
-        applicationId "draw.me.fairy"
+        applicationId "com.testfairy.samples.drawmefairy"
         minSdkVersion 16
         targetSdkVersion 29
 
@@ -24,12 +24,12 @@ android {
     productFlavors {
         regular {
             dimension "features"
-            applicationId "draw.me.fairy"
+            applicationId "com.testfairy.samples.drawmefairy"
         }
 
         audio {
             dimension "features"
-            applicationId "draw.me.fairy.audio"
+            applicationId "com.testfairy.samples.drawmefairy.audio"
         }
     }
     
