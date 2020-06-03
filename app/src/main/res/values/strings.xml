@@ -20,6 +20,7 @@
 	<string name="open_from_gallery_content_description">Open from gallery</string>
 	<string name="open_blank_canvas_content_description">Open blank canvas</string>
 	<string name="about_app_content_description">About app</string>
+	<string name="add_attributes_content_description">Add Attributes</string>
 	<string name="install_screenshot_overlay_description">Take a Screenshot</string>
 	<string name="install_video_overlay_description">Record Video</string>
 	<string name="show_feedback_overlay_description">Show/Hide Overlay</string>
@@ -29,4 +30,13 @@
 	<string name="color_picker_button_content_description">Color picker button</string>
 	<string name="save_button_content_description">Save button</string>
 	<string name="share_button_content_description">Share button</string>
+	<string name="send_feedback_text">Send Feedback</string>
+	<string name="add_attributes_text">Add Attributes</string>
+    <string name="add_attribute_text">Add Attribute</string>
+	<string name="attributes_text">Attributes:</string>
+	<string name="attribute_key_content_description">Key</string>
+	<string name="attribute_value_content_description">Value</string>
+	<string name="add_attribute_content_description">Add Attribute</string>
+	<string name="attribute_key_hint">Key\t\t\t\t\t(i.e shop.currency)</string>
+	<string name="attribute_value_hint">Value\t\t\t\t(i.e USD)</string>
 </resources>
