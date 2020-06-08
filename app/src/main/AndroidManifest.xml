@@ -73,6 +73,11 @@
 			android:label="Crash Activity"
 			/>
 
+		<activity
+			android:name="com.testfairy.samples.drawmefairy.AddAttributesActivity"
+			android:label="Add Attributes Activity"
+			/>
+
 	</application>
 
 </manifest>

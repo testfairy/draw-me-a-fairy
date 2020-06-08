@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/menu_background"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/menu_logo"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/app_logo" />
+
+    <EditText
+        android:id="@+id/attributes_key_edittext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#3355CC"
+        android:contentDescription="@string/attribute_key_content_description"
+        android:hint="@string/attribute_key_hint"
+        android:lines="1"
+        android:padding="5dp"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#AAAAAA"
+        android:textSize="20dp" />
+
+    <EditText
+        android:id="@+id/attributes_value_edittext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:background="#3355CC"
+        android:contentDescription="@string/attribute_value_content_description"
+        android:hint="@string/attribute_value_hint"
+        android:maxLines="10"
+        android:minLines="1"
+        android:padding="5dp"
+        android:text=""
+        android:textColor="#FFFFFF"
+        android:textColorHint="#AAAAAA"
+        android:textSize="20dp" />
+
+    <Button
+        android:id="@+id/add_attibute_button"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/add_attribute_content_description"
+        android:drawableLeft="@android:drawable/ic_menu_save"
+        android:text="@string/add_attribute_text" />
+
+    <ScrollView
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp">
+
+        <LinearLayout
+            android:id="@+id/current_attributes"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:text="@string/attributes_text"
+                android:textColor="#FFFFFF"
+                android:textSize="10dp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

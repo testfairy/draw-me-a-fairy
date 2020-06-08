@@ -1,6 +1,7 @@
 package com.testfairy.samples.drawmefairy;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -12,7 +13,6 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 import com.testfairy.TestFairy;
-import com.testfairy.samples.drawmefairy.R;
 
 import utils.ActivityTime;
 
@@ -41,6 +41,15 @@ public class AboutActivity extends Activity {
 				TestFairyData testFairyData = new TestFairyDataReader().read(AboutActivity.this.getApplicationContext());
 				TestFairy.showFeedbackForm(AboutActivity.this, testFairyData.getAppToken(), false);
 				finish();
+			}
+		});
+
+		Button addAttributesButton = (Button) findViewById(R.id.add_attibutes_button);
+		addAttributesButton.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(AboutActivity.this, AddAttributesActivity.class);
+				startActivity(intent);
 			}
 		});
 
