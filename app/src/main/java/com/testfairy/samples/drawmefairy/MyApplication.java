@@ -3,7 +3,6 @@ package com.testfairy.samples.drawmefairy;
 import android.app.Application;
 
 import com.testfairy.TestFairy;
-import com.testfairy.samples.drawmefairy.R;
 
 import java.util.UUID;
 
@@ -27,7 +26,7 @@ public class MyApplication extends Application {
 		TestFairy.setServerEndpoint(testFairyData.getServerEndpoint());
 		TestFairy.setUserId(AnimalName.getAnimalEmail(this));
 		TestFairy.begin(this, testFairyData.getAppToken());
-		TestFairy.hideView(R.id.hidden);
+//		TestFairy.hideView(R.id.hidden);
 
 		// these logs are not visible in 'adb logcat', but are visible in testfairy
 		TestFairy.log(TAG, "Remote logging is enabled");

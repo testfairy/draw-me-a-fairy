@@ -32,7 +32,7 @@
 		android:contentDescription="@string/color_picker_button_content_description"
 		/>
 	<ImageButton
-		android:id="@+id/save"
+		android:tag="saveButton"
 		android:layout_width="@dimen/icon_size"
 		android:layout_height="@dimen/icon_size"
 		android:src="@android:drawable/ic_menu_save"
@@ -40,7 +40,7 @@
 		android:contentDescription="@string/save_button_content_description"
 		/>
 	<ImageButton
-		android:id="@+id/share"
+		android:tag="shareButton"
 		android:layout_width="@dimen/icon_size"
 		android:layout_height="@dimen/icon_size"
 		android:src="@android:drawable/ic_menu_share"
