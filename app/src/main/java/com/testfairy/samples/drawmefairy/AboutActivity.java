@@ -32,9 +32,17 @@ public class AboutActivity extends Activity {
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.about);
 
-		Button sendFeedbackButton = (Button) findViewById(R.id.send_feedback_button);
-
+		final Button sendFeedbackButton = (Button) findViewById(R.id.send_feedback_button);
 		sendFeedbackButton.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				TestFairy.showFeedbackForm();
+				finish();
+			}
+		});
+
+		Button stopSendFeedbackButton = (Button) findViewById(R.id.stop_send_feedback_button);
+		stopSendFeedbackButton.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				TestFairy.stop();

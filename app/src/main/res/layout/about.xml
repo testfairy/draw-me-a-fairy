@@ -1,49 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	      android:layout_width="fill_parent"
-	      android:layout_height="fill_parent"
-	      android:background="@drawable/menu_background">
+<ScrollView
+	android:fillViewport="true"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	xmlns:android="http://schemas.android.com/apk/res/android">
 
-	<ImageView
-		android:id="@+id/about_image"
-		android:layout_width="fill_parent"
-		android:layout_height="fill_parent"
-		android:layout_margin="35dp"
-		android:layout_above="@+id/about_text"
-		android:src="@drawable/app_logo"
-		android:contentDescription="@string/about_testfairy" />
+		<RelativeLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:background="@drawable/menu_background">
 
-	<TextView
-		android:id="@+id/about_text"
-		android:layout_width="fill_parent"
-		android:layout_height="wrap_content"
-		android:layout_centerInParent="true"
-		android:textColor="@android:color/white"
-		android:text="@string/about_text"
-		android:gravity="center"
-		android:textSize="@dimen/about_text_size"
-		/>
+			<ImageView
+				android:id="@+id/about_image"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_margin="35dp"
+				android:layout_above="@+id/about_text"
+				android:src="@drawable/app_logo"
+				android:contentDescription="@string/about_testfairy" />
 
-	<Button
-		android:id="@+id/send_feedback_button"
-		android:layout_height="wrap_content"
-		android:layout_width="fill_parent"
-		android:layout_marginTop="20dp"
-		android:text="@string/send_feedback_text"
-		android:layout_below="@id/about_text"
-		android:drawableLeft="@android:drawable/ic_menu_info_details"
-		android:contentDescription="@string/about_app_content_description"
-		/>
+			<TextView
+				android:id="@+id/about_text"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_centerInParent="true"
+				android:textColor="@android:color/white"
+				android:text="@string/about_text"
+				android:gravity="center"
+				android:textSize="@dimen/about_text_size"
+				/>
 
-	<Button
-		android:id="@+id/add_attibutes_button"
-		android:layout_height="wrap_content"
-		android:layout_width="fill_parent"
-		android:text="@string/add_attributes_text"
-		android:paddingLeft="16dp"
-		android:layout_below="@id/send_feedback_button"
-		android:drawableLeft="@android:drawable/ic_menu_sort_by_size"
-		android:contentDescription="@string/add_attributes_content_description"
-		/>
+			<Button
+				android:id="@+id/send_feedback_button"
+				android:layout_height="wrap_content"
+				android:layout_width="match_parent"
+				android:layout_marginTop="20dp"
+				android:text="@string/send_feedback_text"
+				android:layout_below="@id/about_text"
+				android:drawableLeft="@android:drawable/ic_menu_info_details"
+				android:contentDescription="@string/about_app_content_description"
+				/>
 
-</RelativeLayout>
+			<Button
+				android:id="@+id/stop_send_feedback_button"
+				android:layout_height="wrap_content"
+				android:layout_width="match_parent"
+				android:text="@string/stop_send_feedback_text"
+				android:layout_below="@id/send_feedback_button"
+				android:drawableLeft="@android:drawable/ic_menu_info_details"
+				android:contentDescription="@string/about_app_content_description"
+				/>
+
+			<Button
+				android:id="@+id/add_attibutes_button"
+				android:layout_height="wrap_content"
+				android:layout_width="match_parent"
+				android:text="@string/add_attributes_text"
+				android:layout_below="@id/stop_send_feedback_button"
+				android:drawableLeft="@android:drawable/ic_menu_sort_by_size"
+				android:contentDescription="@string/add_attributes_content_description"
+				/>
+
+		</RelativeLayout>
+
+</ScrollView>

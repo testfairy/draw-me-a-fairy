@@ -1,5 +1,6 @@
 package com.testfairy.samples.drawmefairy;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -23,10 +24,10 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.testfairy.TestFairy;
-import com.testfairy.samples.drawmefairy.R;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -159,6 +160,7 @@ public class DrawingActivity extends Activity {
 		});
 	}
 
+	@SuppressLint("ResourceType")
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		Log.d(TAG, "onCreate " + TAG);
@@ -198,13 +200,28 @@ public class DrawingActivity extends Activity {
 			}
 		}
 
-		drawingPanel = (DrawingPanel) findViewById(R.id.drawing_panel);
+		drawingPanel = findViewById(R.id.drawing_panel);
 
 		colorPickerButton = (ImageButton) findViewById(R.id.color_picker);
 		View painterPickerButton = findViewById(R.id.painter_picker);
 		View erasePickerButton = findViewById(R.id.erase_picker);
-		View saveButton = findViewById(R.id.save);
-		View shareButton = findViewById(R.id.share);
+
+		View saveButton = null;
+		View shareButton = null;
+		if (erasePickerButton.getParent() instanceof LinearLayout) {
+			LinearLayout parent = (LinearLayout) erasePickerButton.getParent();
+
+			for (int i = 0; i < parent.getChildCount(); i++) {
+				if ("shareButton".equals(parent.getChildAt(i).getTag())) {
+					shareButton = parent.getChildAt(i);
+				}
+
+				if ("saveButton".equals(parent.getChildAt(i).getTag())) {
+					saveButton = parent.getChildAt(i);
+					saveButton.setId(12345);
+				}
+			}
+		}
 
 		colorPickerButton.setOnClickListener(onColorPickerClick);
 		painterPickerButton.setOnClickListener(onPainterPickerClick);
@@ -251,7 +268,6 @@ public class DrawingActivity extends Activity {
 	 * @return true if the save is succeed, otherwise return false.
 	 */
 	private boolean saveToFile(boolean isTempFile) {
-
 		Bitmap bitmapToSave = getBitmapFromLayout(R.id.drawing_container);
 		ByteArrayOutputStream bytes = new ByteArrayOutputStream();
 		bitmapToSave.compress(CompressFormat.JPEG, 75, bytes);
