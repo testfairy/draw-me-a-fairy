@@ -449,7 +449,7 @@ public class TestFairyAudioRecord {
 							recorder.read(soundBuffer, 0, SHORTS_PER_ELEMENT);
 
 							if (logStopWatch.stopIfAboveTimeLimit(1)) {
-								Log.d(TAG, "Audio is being written to memory file" + soundBuffer.toString());
+								// Log.d(TAG, "Audio is being written to memory file" + soundBuffer.toString());
 								logStopWatch.start();
 							}
 
