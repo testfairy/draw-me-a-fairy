@@ -61,6 +61,16 @@
 				android:contentDescription="@string/add_attributes_content_description"
 				/>
 
+			<Button
+				android:id="@+id/location_button"
+				android:layout_height="wrap_content"
+				android:layout_width="match_parent"
+				android:text="@string/location_text"
+				android:layout_below="@id/add_attibutes_button"
+				android:drawableLeft="@android:drawable/ic_menu_mapmode"
+				android:contentDescription="@string/add_attributes_content_description"
+				/>
+
 		</RelativeLayout>
 
 </ScrollView>

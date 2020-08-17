@@ -17,20 +17,19 @@
 		<activity
 			android:name="com.testfairy.samples.drawmefairy.SplashScreenActivity"
 			android:screenOrientation="portrait"
-			android:theme="@android:style/Theme.Black.NoTitleBar" >
+			android:theme="@android:style/Theme.Black.NoTitleBar" />
+
+		<activity
+			android:name="com.testfairy.samples.drawmefairy.MenuActivity"
+			android:label="@string/app_name"
+			android:configChanges="orientation">
 
 			<intent-filter >
 				<action android:name="android.intent.action.MAIN" />
 				<category android:name="android.intent.category.LAUNCHER"/>
 			</intent-filter>
 
-		</activity >
-
-		<activity
-			android:name="com.testfairy.samples.drawmefairy.MenuActivity"
-			android:label="@string/app_name"
-			android:configChanges="orientation"
-			/>
+		</activity>
 
 		<activity
 			android:name="com.testfairy.samples.drawmefairy.DrawingActivity"
@@ -77,6 +76,15 @@
 			android:name="com.testfairy.samples.drawmefairy.AddAttributesActivity"
 			android:label="Add Attributes Activity"
 			/>
+
+		<activity
+			android:name="com.testfairy.samples.drawmefairy.LocationActivity"
+			android:label="Add Attributes Activity"
+			/>
+
+		<service
+			android:name="com.testfairy.samples.drawmefairy.LocationUpdatesService"
+			android:foregroundServiceType="location" />
 
 	</application>
 
