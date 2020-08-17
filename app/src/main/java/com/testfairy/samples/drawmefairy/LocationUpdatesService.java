@@ -38,6 +38,11 @@ public class LocationUpdatesService extends Service implements LocationListener 
 		getLocationUpdates();
 	}
 
+	public LocationUpdatesService() {
+		this.mContext = this;
+		getLocationUpdates();
+        }
+
 	@SuppressLint("MissingPermission")
 	private Location getLocationUpdates() {
 		try {
