@@ -30,7 +30,7 @@
 	<string name="send_feedback_text">Send Feedback</string>
 	<string name="add_attributes_text">Add Attributes</string>
     <string name="add_attribute_text">Add Attribute</string>
-	<string name="location_text">Location</string>
+	<string name="location_text">Enable Location</string>
 	<string name="location_testfairy">Location</string>
 	<string name="attributes_text">Attributes:</string>
 	<string name="attribute_key_content_description">Key</string>
