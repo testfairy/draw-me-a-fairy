@@ -61,6 +61,15 @@ public class AboutActivity extends Activity {
 			}
 		});
 
+		Button locationButton = (Button) findViewById(R.id.location_button);
+		locationButton.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(AboutActivity.this, LocationActivity.class);
+				startActivity(intent);
+			}
+		});
+
 		ImageView image = (ImageView) findViewById(R.id.about_image);
 
 		RotateAnimation anim = new RotateAnimation(0f, 359f, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);

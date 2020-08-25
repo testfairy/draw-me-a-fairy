@@ -3,23 +3,20 @@
 	<string name="app_name">Draw Me A Fairy (with audio)</string>
 	<string name="please_turn_on_gps">Please turn on your GPS</string>
 	<string name="about_text">
-		"Draw Me Something" is a sample application for
-		demonstrating the TestFairy platform.\n
-		\n
-		With TestFairy you can easily inspect how others are using your app
-		by viewing a video of your app running on their device. Real devices,
-		real apps, real people.\n
-		\n
-		For more information, please visit www.testfairy.com
+		This app is a demo app to show how TestFairy works.
+
+		\n\nFor more information, please visit
+		\ntestfairy.com
 	</string>
-    <string name="about_testfairy">About TestFairy</string>
+	<string name="about_testfairy">About TestFairy</string>
 	<string name="small_brush_content_description">Small brush Selection</string>
 	<string name="medium_brush_content_description">Medium brush selection</string>
 	<string name="large_brush_content_description">Large brush selection</string>
-    <string name="clock_hand_content_description">Clock hand</string>
+	<string name="clock_hand_content_description">Clock hand</string>
 	<string name="open_from_gallery_content_description">Open from gallery</string>
 	<string name="open_blank_canvas_content_description">Open blank canvas</string>
 	<string name="about_app_content_description">About app</string>
+	<string name="add_attributes_content_description">Add Attributes</string>
 	<string name="install_screenshot_overlay_description">Take a Screenshot</string>
 	<string name="install_video_overlay_description">Record Video</string>
 	<string name="show_feedback_overlay_description">Show/Hide Overlay</string>
@@ -29,4 +26,16 @@
 	<string name="color_picker_button_content_description">Color picker button</string>
 	<string name="save_button_content_description">Save button</string>
 	<string name="share_button_content_description">Share button</string>
+	<string name="stop_send_feedback_text">Stop &amp; Send Feedback</string>
+	<string name="send_feedback_text">Send Feedback</string>
+	<string name="add_attributes_text">Add Attributes</string>
+	<string name="add_attribute_text">Add Attribute</string>
+	<string name="location_text">Enable Location</string>
+	<string name="location_testfairy">Location</string>
+	<string name="attributes_text">Attributes:</string>
+	<string name="attribute_key_content_description">Key</string>
+	<string name="attribute_value_content_description">Value</string>
+	<string name="add_attribute_content_description">Add Attribute</string>
+	<string name="attribute_key_hint">Key\t\t\t\t\t(i.e shop.currency)</string>
+	<string name="attribute_value_hint">Value\t\t\t\t(i.e USD)</string>
 </resources>

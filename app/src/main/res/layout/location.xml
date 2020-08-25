@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+	android:fillViewport="true"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	xmlns:android="http://schemas.android.com/apk/res/android">
+
+		<RelativeLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:background="@drawable/menu_background">
+
+			<ImageView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_margin="35dp"
+				android:layout_above="@+id/location_text"
+				android:src="@drawable/app_logo"
+				android:contentDescription="@string/location_testfairy" />
+
+			<TextView
+				android:id="@+id/location_text"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_centerInParent="true"
+				android:textColor="@android:color/white"
+				android:text=""
+				android:gravity="center"
+				android:textSize="@dimen/about_text_size"
+				/>
+
+		</RelativeLayout>
+
+</ScrollView>
