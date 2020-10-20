@@ -32,13 +32,12 @@ import com.testfairy.TestFairy;
 
 import audio.TestFairyAudioRecord;
 
-import utils.AnimalName;
-
 public class MenuActivity extends Activity {
 
 	private static final int SELECT_PICTURE_REQUEST_CODE = 1;
 	private static int menuOpenedCount = 0;
 	private final String TAG = getClass().getSimpleName();
+
 	private LocationListener locationListener = new LocationListener() {
 		@Override
 		public void onLocationChanged(Location location) {
@@ -60,12 +59,13 @@ public class MenuActivity extends Activity {
 			Log.i(TAG, "onProviderDisabled");
 		}
 	};
+
 	private final int MENU_CLOCK = 1;
 	private final int MENU_BLOG = 2;
+
 	private View.OnClickListener onClickFromGallery = new View.OnClickListener() {
 		@Override
 		public void onClick(View view) {
-
 			Intent intent = new Intent(MenuActivity.this, SelectPhotoActivity.class);
 			startActivity(intent);
 //			intent.setType("image/jpeg");
@@ -73,6 +73,7 @@ public class MenuActivity extends Activity {
 //			startActivityForResult(Intent.createChooser(intent, "Select Picture"), SELECT_PICTURE_REQUEST_CODE);
 		}
 	};
+
 	private View.OnLongClickListener onLongClickMenuLogo = new View.OnLongClickListener() {
 		@Override
 		public boolean onLongClick(View v) {
@@ -115,19 +116,17 @@ public class MenuActivity extends Activity {
 
 		setContentView(R.layout.main_layout);
 
-		((TextView)findViewById(R.id.hidden)).setText("Your secret animal is ("+ AnimalName.getAnimalName(this) +")");
 		((TextView)findViewById(R.id.version)).setText("Version: " + BuildConfig.VERSION_CODE + " - " + BuildConfig.VERSION_NAME);
 
 		Button fromGalleryButton = findViewById(R.id.from_gallery);
 		Button blankCanvasButton = findViewById(R.id.blank_canvas);
 		Button aboutButton = findViewById(R.id.about_app);
-		Button crashButton = findViewById(R.id.crash_button);
+
 		View menuLogo = findViewById(R.id.menu_logo);
 
 		fromGalleryButton.setOnClickListener(new OnClickStartActivity(SelectPhotoActivity.class));
 		blankCanvasButton.setOnClickListener(new OnClickStartActivity(DrawingActivity.class));
 		aboutButton.setOnClickListener(new OnClickStartActivity(AboutActivity.class));
-		crashButton.setOnClickListener(new OnClickStartActivity(CrashActivity.class));
 
 		menuLogo.setOnLongClickListener(onLongClickMenuLogo);
 	}

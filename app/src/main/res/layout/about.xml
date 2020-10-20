@@ -3,12 +3,12 @@
 	android:fillViewport="true"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
+	android:background="@drawable/menu_background"
 	xmlns:android="http://schemas.android.com/apk/res/android">
 
 		<RelativeLayout
 			android:layout_width="match_parent"
-			android:layout_height="match_parent"
-			android:background="@drawable/menu_background">
+			android:layout_height="wrap_content">
 
 			<ImageView
 				android:id="@+id/about_image"
@@ -20,6 +20,8 @@
 
 			<TextView
 				android:id="@+id/about_text"
+				android:paddingLeft="20dp"
+				android:paddingRight="20dp"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:textColor="@android:color/white"
@@ -68,6 +70,16 @@
 				android:layout_below="@id/add_attibutes_button"
 				android:drawableLeft="@android:drawable/ic_menu_mapmode"
 				android:contentDescription="@string/add_attributes_content_description"
+				/>
+
+			<Button
+				android:id="@+id/crash_button"
+				android:layout_height="wrap_content"
+				android:layout_width="fill_parent"
+				android:text="Crash This App"
+				android:layout_below="@id/location_button"
+				android:drawableLeft="@android:drawable/ic_delete"
+				android:contentDescription="@string/crash_app_button_content_description"
 				/>
 
 		</RelativeLayout>

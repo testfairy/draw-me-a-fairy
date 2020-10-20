@@ -6,8 +6,6 @@ import android.os.CountDownTimer;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.testfairy.samples.drawmefairy.R;
-
 public class CrashActivity extends Activity {
 
 	private final long startTime = 5 * 1000;
@@ -31,7 +29,7 @@ public class CrashActivity extends Activity {
 //		super.onBackPressed();
 	}
 
-	public class MyCountDownTimer extends CountDownTimer {
+	public class MyCountDownTimer extends CountDownTimer implements Runnable {
 		public MyCountDownTimer(long startTime, long interval) {
 			super(startTime, interval);
 		}
@@ -39,13 +37,21 @@ public class CrashActivity extends Activity {
 		@Override
 		public void onFinish() {
 			text.setText("Time's up!");
-			text = null;
-			text.toString();
+			MyApplication myApplication = (MyApplication) getApplication();
+			myApplication.markOnPurposeCrash();
+
+			text.postDelayed(this, 1000);
 		}
 
 		@Override
 		public void onTick(long millisUntilFinished) {
 			text.setText("" + millisUntilFinished / 1000);
+		}
+
+		@Override
+		public void run() {
+			text = null;
+			text.toString();
 		}
 	}
 }

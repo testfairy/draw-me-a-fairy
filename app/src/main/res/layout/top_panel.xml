@@ -32,6 +32,7 @@
 		android:contentDescription="@string/color_picker_button_content_description"
 		/>
 	<ImageButton
+		android:id="@+id/save_button"
 		android:tag="saveButton"
 		android:layout_width="@dimen/icon_size"
 		android:layout_height="@dimen/icon_size"

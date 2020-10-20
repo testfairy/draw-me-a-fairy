@@ -9,10 +9,10 @@
 
 	<application
 		android:largeHeap="true"
+		android:allowBackup="false"
 		android:label="@string/app_name"
 		android:name="com.testfairy.samples.drawmefairy.MyApplication"
-		android:icon="@drawable/icon"
-		android:allowBackup="false">
+		android:icon="@drawable/icon">
 
 		<activity
 			android:name="com.testfairy.samples.drawmefairy.SplashScreenActivity"
@@ -21,8 +21,8 @@
 
 		<activity
 			android:name="com.testfairy.samples.drawmefairy.MenuActivity"
-			android:label="@string/app_name"
-			android:configChanges="orientation">
+			android:screenOrientation="portrait"
+			android:label="@string/app_name">
 
 			<intent-filter >
 				<action android:name="android.intent.action.MAIN" />
@@ -33,53 +33,61 @@
 
 		<activity
 			android:name="com.testfairy.samples.drawmefairy.DrawingActivity"
-			android:configChanges="orientation"
+			android:screenOrientation="portrait"
+			android:label="Drawing Activity"
 			/>
 
 		<activity
 			android:name="com.testfairy.samples.drawmefairy.AboutActivity"
+			android:screenOrientation="portrait"
 			android:label="About"
-			android:configChanges="orientation"
 			/>
 
 		<activity
 			android:name="com.testfairy.samples.drawmefairy.SelectPhotoActivity"
+			android:screenOrientation="portrait"
 			android:label="Select Photo"
-			android:configChanges="orientation"
 			/>
 
 		<activity
 			android:name="com.testfairy.samples.drawmefairy.SecretActivity"
+			android:screenOrientation="portrait"
 			android:label="Secret Activity"
 			/>
 
 		<activity
 			android:name="com.testfairy.samples.drawmefairy.ClockActivity"
+			android:screenOrientation="portrait"
 			android:label="Clock Activity"
 			/>
 
 		<activity
 			android:name="com.testfairy.samples.drawmefairy.TestFairyBlogActivity"
+			android:screenOrientation="portrait"
 			android:label="TestFairy Blog"
 			/>
 
 		<activity
 			android:name="com.testfairy.samples.drawmefairy.PrintActivity"
+			android:screenOrientation="portrait"
 			android:label="Print Activity" />
 
 		<activity
 			android:name="com.testfairy.samples.drawmefairy.CrashActivity"
+			android:screenOrientation="portrait"
 			android:label="Crash Activity"
 			/>
 
 		<activity
 			android:name="com.testfairy.samples.drawmefairy.AddAttributesActivity"
+			android:screenOrientation="portrait"
 			android:label="Add Attributes Activity"
 			/>
 
 		<activity
 			android:name="com.testfairy.samples.drawmefairy.LocationActivity"
-			android:label="Add Attributes Activity"
+			android:screenOrientation="portrait"
+			android:label="Location Activity"
 			/>
 
 		<service

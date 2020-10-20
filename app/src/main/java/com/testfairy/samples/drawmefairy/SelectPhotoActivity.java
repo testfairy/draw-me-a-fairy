@@ -11,7 +11,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.testfairy.TestFairy;
-import com.testfairy.samples.drawmefairy.R;
 
 import java.lang.reflect.Field;
 
@@ -23,7 +22,6 @@ public class SelectPhotoActivity extends Activity {
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
-
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.select_photo);
 		Log.d(TAG, "onCreate " + TAG);
@@ -31,7 +29,6 @@ public class SelectPhotoActivity extends Activity {
 		thumbnails = (LinearLayout) findViewById(R.id.thumbnails);
 
 		loadThumbnails();
-
 	}
 
 	private void loadThumbnails() {
