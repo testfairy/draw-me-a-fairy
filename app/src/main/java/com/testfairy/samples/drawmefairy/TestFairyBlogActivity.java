@@ -5,8 +5,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.webkit.WebView;
 
-import com.testfairy.samples.drawmefairy.R;
-
 import utils.ActivityTime;
 
 public class TestFairyBlogActivity extends Activity {
@@ -15,7 +13,6 @@ public class TestFairyBlogActivity extends Activity {
 	private final String BLOG_URL = "http://blog.testfairy.com";
 	private ActivityTime activityTime;
 
-
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -23,8 +20,6 @@ public class TestFairyBlogActivity extends Activity {
 		setContentView(R.layout.blog);
 		WebView webView = (WebView) findViewById(R.id.webView);
 		webView.loadUrl(BLOG_URL);
-
-
 	}
 
 	@Override

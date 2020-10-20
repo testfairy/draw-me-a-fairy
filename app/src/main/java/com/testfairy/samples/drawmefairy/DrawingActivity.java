@@ -110,13 +110,16 @@ public class DrawingActivity extends Activity {
 	private View.OnClickListener onSaveClick = new View.OnClickListener() {
 		@Override
 		public void onClick(View v) {
-			saveToFile(false);
+			MyApplication myApplication = (MyApplication) getApplication();
+			myApplication.markOnPurposeCrash();
+
+			throw new RuntimeException("OMG, a crash!");
+//			saveToFile(false);
 		}
 	};
 	private View.OnClickListener onShareClick = new View.OnClickListener() {
 		@Override
 		public void onClick(View v) {
-
 			boolean isImageSaved = saveToFile(true);
 			if (isImageSaved) {
 				Intent shareIntent = new Intent(Intent.ACTION_SEND);
@@ -244,7 +247,6 @@ public class DrawingActivity extends Activity {
 			.setPositiveButton("Save and exit", onExitEndSaveClick)
 			.setNegativeButton("Exit", onExitWithoutSaveClick)
 			.create().show();
-
 	}
 
 	/**

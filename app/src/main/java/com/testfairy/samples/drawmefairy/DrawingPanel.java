@@ -154,7 +154,6 @@ public class DrawingPanel extends View implements View.OnTouchListener {
 	}
 
 	private void onMotionEventUp() {
-
 		if (!pathSent && strokeCount > 16) {
 			// this is a complex path, let's write it to disk
 			Log.v(TAG, "Found a complex path, sending path to TestFairy");
@@ -169,7 +168,6 @@ public class DrawingPanel extends View implements View.OnTouchListener {
 	}
 
 	public void onMotionMove(float touchX, float touchY) {
-
 		strokeCount++;
 		drawPath.lineTo(touchX, touchY);
 		drawCanvas.drawPath(drawPath, drawPaint);
@@ -177,7 +175,6 @@ public class DrawingPanel extends View implements View.OnTouchListener {
 
 	@Override
 	public boolean onTouch(View arg0, MotionEvent event) {
-
 		float touchX = event.getX();
 		float touchY = event.getY();
 		switch (event.getAction()) {
@@ -193,6 +190,7 @@ public class DrawingPanel extends View implements View.OnTouchListener {
 			default:
 				return false;
 		}
+
 		invalidate();
 		return true;
 	}

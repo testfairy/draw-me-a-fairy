@@ -8,8 +8,6 @@ import android.view.animation.LinearInterpolator;
 import android.view.animation.RotateAnimation;
 import android.widget.ImageView;
 
-import com.testfairy.samples.drawmefairy.R;
-
 import java.util.Date;
 
 public class ClockActivity extends Activity {
@@ -25,15 +23,12 @@ public class ClockActivity extends Activity {
 		Runnable runnable = new CountDownRunner();
 		Thread myThread = new Thread(runnable);
 		myThread.start();
-
 	}
 
 	public void doRotate() {
-
 		runOnUiThread(new Runnable() {
 			public void run() {
 				try {
-
 					Date dt = new Date();
 					int seconds = 60 - dt.getSeconds();
 					img = findViewById(R.id.imgsecond);
@@ -48,21 +43,17 @@ public class ClockActivity extends Activity {
 
 					img.startAnimation(rotateAnimation);
 				} catch (Exception e) {
-
 					e.printStackTrace();
-
 				}
 			}
 		});
 	}
-
 
 	class CountDownRunner implements Runnable {
 		// @Override
 		public void run() {
 			while (!Thread.currentThread().isInterrupted()) {
 				try {
-
 					doRotate();
 					Thread.sleep(1000);
 				} catch (InterruptedException e) {
