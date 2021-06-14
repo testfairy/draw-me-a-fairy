@@ -8,6 +8,9 @@ android:
   - build-tools-30.0.2
   - android-30
 
+before_install:
+  - yes | sdkmanager "platforms;android-30"
+
 before_script:
   - sed -i "s/versionName.*/versionName \"${TRAVIS_TAG}\"/g" app/build.gradle
   - cat app/build.gradle
