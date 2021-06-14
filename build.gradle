@@ -3,9 +3,11 @@ buildscript {
     repositories {
         jcenter()
         google()
+        maven { url 'https://maven.testfairy.com' }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.5.2'
+        classpath 'com.android.tools.build:gradle:4.2.1'
+        classpath 'com.testfairy.plugins.gradle:testfairy:3.+'
     }
 }
 
@@ -13,6 +15,7 @@ allprojects {
     repositories {
         jcenter()
         google()
+        maven { url 'https://maven.testfairy.com' }
 
         flatDir {
             dirs 'libs'
